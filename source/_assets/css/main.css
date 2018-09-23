@@ -1,0 +1,155 @@
+@tailwind preflight;
+
+
+@tailwind components;
+
+.btn {
+  @apply cursor-pointer inline-flex items-center justify-center px-3 py-2 rounded font-medium tracking-wide no-underline shadow transition-fast;
+}
+
+.btn-grow:hover {
+  @apply shadow-lg;
+  transform: scale(1.1);
+}
+
+.btn-lift:hover {
+  @apply shadow-lg;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  @apply shadow;
+  transform: translateY(0) scale(1);
+}
+
+.btn-lg {
+  @apply px-4 py-3 text-lg;
+}
+
+@media screen and (min-width: config('screens.md')) {
+  .btn-lg {
+    @apply text-xl;
+  }
+}
+
+
+
+@tailwind utilities;
+
+.transition {
+  transition: all 0.2s ease;
+}
+
+.transition-fast {
+  transition: all 0.1s ease;
+}
+
+.transition-slow {
+  transition: all 0.4s ease;
+}
+
+.origin-middle {
+  transform-origin: 50% 50% 0;
+}
+
+.rotate-0 {
+  transform: rotate(0deg);
+}
+
+.rotate-left-30 {
+  transform: rotate(-30deg);
+}
+
+.rotate-left-45 {
+  transform: rotate(-45deg);
+}
+
+.rotate-left-60 {
+  transform: rotate(-60deg);
+}
+
+.rotate-left-90 {
+  transform: rotate(-90deg);
+}
+
+.rotate-left-120 {
+  transform: rotate(-120deg);
+}
+
+.rotate-left-135 {
+  transform: rotate(-135deg);
+}
+
+.rotate-left-150 {
+  transform: rotate(-150deg);
+}
+
+.rotate-left-180 {
+  transform: rotate(-180deg);
+}
+
+.rotate-right-30 {
+  transform: rotate(30deg);
+}
+
+.rotate-right-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-right-60 {
+  transform: rotate(60deg);
+}
+
+.rotate-right-90 {
+  transform: rotate(90deg);
+}
+
+.rotate-right-120 {
+  transform: rotate(120deg);
+}
+
+.rotate-right-135 {
+  transform: rotate(135deg);
+}
+
+.rotate-right-150 {
+  transform: rotate(150deg);
+}
+
+.rotate-right-180 {
+  transform: rotate(180deg);
+}
+
+.move-down-100 {
+  transform: translateY(100%);
+}
+
+.move-up-100 {
+  transform: translateY(-100%);
+}
+
+.move-right-100 {
+  transform: translateX(100%);
+}
+
+.move-left-100 {
+  transform: translateX(-100%);
+}
+
+@responsive {
+  .text-shadow {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 2px 4px 0 rgba(0,0,0,0.16);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 15px 30px 0 rgba(0,0,0,0.22), 0 5px 15px 0 rgba(0,0,0,0.16);
+  }
+
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}
