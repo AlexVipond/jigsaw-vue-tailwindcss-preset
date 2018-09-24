@@ -21008,6 +21008,10 @@ a {
   font-size: 3rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+}
+
 .group:hover .group-hover\:text-xs {
   font-size: .75rem;
 }
@@ -21042,6 +21046,10 @@ a {
 
 .group:hover .group-hover\:text-5xl {
   font-size: 3rem;
+}
+
+.group:hover .group-hover\:text-6xl {
+  font-size: 3.75rem;
 }
 
 .hover\:text-xs:hover {
@@ -21080,6 +21088,10 @@ a {
   font-size: 3rem;
 }
 
+.hover\:text-6xl:hover {
+  font-size: 3.75rem;
+}
+
 .focus\:text-xs:focus {
   font-size: .75rem;
 }
@@ -21116,6 +21128,10 @@ a {
   font-size: 3rem;
 }
 
+.focus\:text-6xl:focus {
+  font-size: 3.75rem;
+}
+
 .active\:text-xs:active {
   font-size: .75rem;
 }
@@ -21150,6 +21166,10 @@ a {
 
 .active\:text-5xl:active {
   font-size: 3rem;
+}
+
+.active\:text-6xl:active {
+  font-size: 3.75rem;
 }
 
 .italic {
@@ -22704,6 +22724,14 @@ a {
 }
 
 @media (min-width: 576px) {
+  .sm\:btn-lg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1.125rem;
+  }
+
   .sm\:list-reset {
     list-style: none;
     padding: 0;
@@ -42990,6 +43018,10 @@ a {
     font-size: 3rem;
   }
 
+  .sm\:text-6xl {
+    font-size: 3.75rem;
+  }
+
   .group:hover .sm\:group-hover\:text-xs {
     font-size: .75rem;
   }
@@ -43024,6 +43056,10 @@ a {
 
   .group:hover .sm\:group-hover\:text-5xl {
     font-size: 3rem;
+  }
+
+  .group:hover .sm\:group-hover\:text-6xl {
+    font-size: 3.75rem;
   }
 
   .sm\:hover\:text-xs:hover {
@@ -43062,6 +43098,10 @@ a {
     font-size: 3rem;
   }
 
+  .sm\:hover\:text-6xl:hover {
+    font-size: 3.75rem;
+  }
+
   .sm\:focus\:text-xs:focus {
     font-size: .75rem;
   }
@@ -43098,6 +43138,10 @@ a {
     font-size: 3rem;
   }
 
+  .sm\:focus\:text-6xl:focus {
+    font-size: 3.75rem;
+  }
+
   .sm\:active\:text-xs:active {
     font-size: .75rem;
   }
@@ -43132,6 +43176,10 @@ a {
 
   .sm\:active\:text-5xl:active {
     font-size: 3rem;
+  }
+
+  .sm\:active\:text-6xl:active {
+    font-size: 3.75rem;
   }
 
   .sm\:italic {
@@ -44562,6 +44610,14 @@ a {
 }
 
 @media (min-width: 768px) {
+  .md\:btn-lg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1.125rem;
+  }
+
   .md\:list-reset {
     list-style: none;
     padding: 0;
@@ -64848,6 +64904,10 @@ a {
     font-size: 3rem;
   }
 
+  .md\:text-6xl {
+    font-size: 3.75rem;
+  }
+
   .group:hover .md\:group-hover\:text-xs {
     font-size: .75rem;
   }
@@ -64882,6 +64942,10 @@ a {
 
   .group:hover .md\:group-hover\:text-5xl {
     font-size: 3rem;
+  }
+
+  .group:hover .md\:group-hover\:text-6xl {
+    font-size: 3.75rem;
   }
 
   .md\:hover\:text-xs:hover {
@@ -64920,6 +64984,10 @@ a {
     font-size: 3rem;
   }
 
+  .md\:hover\:text-6xl:hover {
+    font-size: 3.75rem;
+  }
+
   .md\:focus\:text-xs:focus {
     font-size: .75rem;
   }
@@ -64956,6 +65024,10 @@ a {
     font-size: 3rem;
   }
 
+  .md\:focus\:text-6xl:focus {
+    font-size: 3.75rem;
+  }
+
   .md\:active\:text-xs:active {
     font-size: .75rem;
   }
@@ -64990,6 +65062,10 @@ a {
 
   .md\:active\:text-5xl:active {
     font-size: 3rem;
+  }
+
+  .md\:active\:text-6xl:active {
+    font-size: 3.75rem;
   }
 
   .md\:italic {
@@ -66420,6 +66496,14 @@ a {
 }
 
 @media (min-width: 992px) {
+  .lg\:btn-lg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1.125rem;
+  }
+
   .lg\:list-reset {
     list-style: none;
     padding: 0;
@@ -86706,6 +86790,10 @@ a {
     font-size: 3rem;
   }
 
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+  }
+
   .group:hover .lg\:group-hover\:text-xs {
     font-size: .75rem;
   }
@@ -86740,6 +86828,10 @@ a {
 
   .group:hover .lg\:group-hover\:text-5xl {
     font-size: 3rem;
+  }
+
+  .group:hover .lg\:group-hover\:text-6xl {
+    font-size: 3.75rem;
   }
 
   .lg\:hover\:text-xs:hover {
@@ -86778,6 +86870,10 @@ a {
     font-size: 3rem;
   }
 
+  .lg\:hover\:text-6xl:hover {
+    font-size: 3.75rem;
+  }
+
   .lg\:focus\:text-xs:focus {
     font-size: .75rem;
   }
@@ -86814,6 +86910,10 @@ a {
     font-size: 3rem;
   }
 
+  .lg\:focus\:text-6xl:focus {
+    font-size: 3.75rem;
+  }
+
   .lg\:active\:text-xs:active {
     font-size: .75rem;
   }
@@ -86848,6 +86948,10 @@ a {
 
   .lg\:active\:text-5xl:active {
     font-size: 3rem;
+  }
+
+  .lg\:active\:text-6xl:active {
+    font-size: 3.75rem;
   }
 
   .lg\:italic {
@@ -88278,6 +88382,14 @@ a {
 }
 
 @media (min-width: 1200px) {
+  .xl\:btn-lg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1.125rem;
+  }
+
   .xl\:list-reset {
     list-style: none;
     padding: 0;
@@ -108564,6 +108676,10 @@ a {
     font-size: 3rem;
   }
 
+  .xl\:text-6xl {
+    font-size: 3.75rem;
+  }
+
   .group:hover .xl\:group-hover\:text-xs {
     font-size: .75rem;
   }
@@ -108598,6 +108714,10 @@ a {
 
   .group:hover .xl\:group-hover\:text-5xl {
     font-size: 3rem;
+  }
+
+  .group:hover .xl\:group-hover\:text-6xl {
+    font-size: 3.75rem;
   }
 
   .xl\:hover\:text-xs:hover {
@@ -108636,6 +108756,10 @@ a {
     font-size: 3rem;
   }
 
+  .xl\:hover\:text-6xl:hover {
+    font-size: 3.75rem;
+  }
+
   .xl\:focus\:text-xs:focus {
     font-size: .75rem;
   }
@@ -108672,6 +108796,10 @@ a {
     font-size: 3rem;
   }
 
+  .xl\:focus\:text-6xl:focus {
+    font-size: 3.75rem;
+  }
+
   .xl\:active\:text-xs:active {
     font-size: .75rem;
   }
@@ -108706,6 +108834,10 @@ a {
 
   .xl\:active\:text-5xl:active {
     font-size: 3rem;
+  }
+
+  .xl\:active\:text-6xl:active {
+    font-size: 3.75rem;
   }
 
   .xl\:italic {

@@ -29,8 +29,10 @@ a {
   transform: translateY(0) scale(1);
 }
 
-.btn-lg {
-  @apply px-4 py-3 text-lg;
+@responsive {
+  .btn-lg {
+    @apply px-4 py-3 text-lg;
+  }
 }
 
 @media screen and (min-width: config('screens.md')) {

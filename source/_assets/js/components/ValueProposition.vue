@@ -5,9 +5,9 @@
       <h3 class="block">{{ messages[language].value_tertiary }}.</h3>
     </div>
 
-    <h2 class="inline-block mt-4 mb-12 p-1 font-600 text-4xl md:text-5xl leading-none text-primary-100 text-shadow">{{ messages[language].value_primary }}.</h2>
+    <h2 class="inline-block mt-4 mb-12 p-1 font-600 text-3xl md:text-5xl leading-none text-primary-100 text-shadow">{{ messages[language].value_primary }}.</h2>
 
-    <p class="mb-12 text-xl md:text-2xl leading-normal text-primary-gray-200 text-shadow"
+    <p class="mb-12 md:text-2xl leading-normal text-primary-gray-200 text-shadow"
     v-html="messages[language].value_description"
     >
     </p>
@@ -37,7 +37,7 @@ export default {
           value_secondary: 'Clases de utilidad',
           value_tertiary: 'Componentes',
           value_description: 'Esta collección de código proporciona \
-          <span class="font-600 text-primary-100">andamio</span>\
+          <span class="font-600 text-primary-100">andamio dogmático</span>\
           <br class="hidden sm:block">\
           para satisfacer las \
           <span class="font-600 text-primary-100">necesidades básicas</span>\

@@ -2,7 +2,7 @@
 
 This code collection provides opinionated scaffolding to satisfy basic needs of static marketing sites.
 
-## Tooling
+## Core tooling
 - [Jigsaw](https://jigsaw.tighten.co)
 - [Vue.js](https://vuejs.org)
 - [TailwindCSS](https://tailwindcss.com)

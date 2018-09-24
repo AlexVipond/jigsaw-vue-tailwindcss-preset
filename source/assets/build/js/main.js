@@ -153,6 +153,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -164,6 +172,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       open: false,
+      mouseover: false,
       language: 'en',
       languages: [{
         code: 'en',
@@ -197,6 +206,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     setLanguage: function setLanguage(languageCode) {
       this.language = languageCode;
       this.$emit('set-language', this.language);
+    },
+    beforeEnter: function beforeEnter(el) {
+      Velocity(el, { opacity: 0, translateX: '100%' }, { duration: 0 });
+    },
+    enter: function enter(el, done) {
+      Velocity(el, { opacity: 1, translateX: '0%' }, { duration: 200, complete: done });
+    },
+    leave: function leave(el, done) {
+      Velocity(el, { opacity: 0, translateX: '100%' }, { duration: 200, complete: done });
     }
   }
 });
@@ -416,7 +434,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           value_secondary: 'Clases de utilidad',
           value_tertiary: 'Componentes',
           value_description: 'Esta collección de código proporciona \
-          <span class="font-600 text-primary-100">andamio</span>\
+          <span class="font-600 text-primary-100">andamio dogmático</span>\
           <br class="hidden sm:block">\
           para satisfacer las \
           <span class="font-600 text-primary-100">necesidades básicas</span>\
@@ -6489,58 +6507,50 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "button",
     {
       staticClass: "cursor-pointer relative flex items-center transition",
       on: {
         click: function($event) {
           _vm.open = !_vm.open
+        },
+        mouseover: function($event) {
+          _vm.mouseover = true
+        },
+        mouseleave: function($event) {
+          _vm.mouseover = false
         }
       }
     },
     [
       _c(
-        "div",
-        { staticClass: "relative" },
+        "transition",
+        {
+          attrs: { name: "slide-in-left", css: false },
+          on: {
+            "before-enter": _vm.beforeEnter,
+            enter: _vm.enter,
+            leave: _vm.leave
+          }
+        },
         [
-          _c("span", [_vm._v(_vm._s(_vm.languageName))]),
-          _vm._v(" "),
-          _c(
-            "dropdown-menu",
-            {
-              staticClass:
-                "absolute pin-b pin-r move-down-100 rounded-sm overflow-hidden shadow-lg",
-              class: [
-                _vm.optionsBgColor,
-                _vm.optionsTextColor,
-                _vm.optionsZIndex
-              ],
-              attrs: { open: _vm.open },
-              on: {
-                click: function($event) {
-                  _vm.open = !_vm.open
-                }
-              }
-            },
-            _vm._l(_vm.inactiveLanguages, function(language) {
-              return _c(
-                "div",
+          _vm.open
+            ? _c(
+                "span",
                 {
-                  key: language.code,
-                  staticClass: "py-2 px-3 transition",
-                  class: [_vm.optionHoverBgColor, _vm.optionHoverTextColor],
-                  on: {
-                    click: function($event) {
-                      _vm.setLanguage(language.code)
+                  directives: [
+                    {
+                      name: "else-if",
+                      rawName: "v-else-if",
+                      value: _vm.mouseover,
+                      expression: "mouseover"
                     }
-                  }
+                  ]
                 },
-                [_vm._v("\n        " + _vm._s(language.name) + "\n      ")]
+                [_vm._v(_vm._s(_vm.languageName))]
               )
-            })
-          )
-        ],
-        1
+            : _vm._e()
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -6568,8 +6578,40 @@ var render = function() {
             }
           })
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "dropdown-menu",
+        {
+          staticClass:
+            "absolute pin-b pin-l move-down-100 rounded-sm overflow-hidden shadow-lg",
+          class: [_vm.optionsBgColor, _vm.optionsTextColor, _vm.optionsZIndex],
+          attrs: { open: _vm.open },
+          on: {
+            click: function($event) {
+              _vm.open = !_vm.open
+            }
+          }
+        },
+        _vm._l(_vm.inactiveLanguages, function(language) {
+          return _c(
+            "div",
+            {
+              key: language.code,
+              staticClass: "py-2 px-3 transition",
+              class: [_vm.optionHoverBgColor, _vm.optionHoverTextColor],
+              on: {
+                click: function($event) {
+                  _vm.setLanguage(language.code)
+                }
+              }
+            },
+            [_vm._v("\n      " + _vm._s(language.name) + "\n    ")]
+          )
+        })
       )
-    ]
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -6759,14 +6801,14 @@ var render = function() {
       "h2",
       {
         staticClass:
-          "inline-block mt-4 mb-12 p-1 font-600 text-4xl md:text-5xl leading-none text-primary-100 text-shadow"
+          "inline-block mt-4 mb-12 p-1 font-600 text-3xl md:text-5xl leading-none text-primary-100 text-shadow"
       },
       [_vm._v(_vm._s(_vm.messages[_vm.language].value_primary) + ".")]
     ),
     _vm._v(" "),
     _c("p", {
       staticClass:
-        "mb-12 text-xl md:text-2xl leading-normal text-primary-gray-200 text-shadow",
+        "mb-12 md:text-2xl leading-normal text-primary-gray-200 text-shadow",
       domProps: {
         innerHTML: _vm._s(_vm.messages[_vm.language].value_description)
       }
