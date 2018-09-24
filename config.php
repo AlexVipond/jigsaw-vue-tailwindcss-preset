@@ -4,9 +4,9 @@ return [
     'baseUrl' => '',
     'production' => false,
     'collections' => [],
-    'full_name' => 'Jigsaw Vue Tailwind Preset',
+    'full_name' => 'Jigsaw Vue TailwindCSS Preset',
     'nickname' => 'Preset',
-    'description' => 'Scaffolding for marketing websites built with Jigsaw, Vue.js, and Tailwind',
+    'description' => 'Scaffolding for marketing websites built with Jigsaw, Vue.js, and TailwindCSS',
     'keywords' => '
       alex,
       vipond,
@@ -18,7 +18,7 @@ return [
       sensible default
     ',
     'google_analytics_id' => 'google_analytics_id',
-    'landing_page_image' => 'https://res.cloudinary.com/duib7ae0a/image/upload/q_auto,f_auto,w_1500/jigsaw-vue-tailwind-preset/building-blocks.jpg',
+    'landing_page_image' => 'https://res.cloudinary.com/duib7ae0a/image/upload/q_auto,f_auto,w_1500,e_contrast:-30/jigsaw-vue-tailwind-preset/building-blocks.jpg',
     'copyright_year' => '2018',
     'email' => 'email@example.com',
     'phone' => '1-234-567-8910',

@@ -1,14 +1,25 @@
 @tailwind preflight;
 
 a {
-  @apply no-underline
+  @apply no-underline;
+}
+
+button:focus {
+  @apply outline-none;
 }
 
 @tailwind components;
 
 .btn {
-  @apply cursor-pointer inline-flex items-center justify-center px-3 py-2 rounded shadow transition-fast;
+  @apply cursor-pointer inline-flex items-center justify-center px-3 py-2 rounded-full shadow transition-fast;
 }
+
+@media screen and (min-width: config('screens.md')) {
+  .btn {
+    @apply rounded;
+  }
+}
+
 
 .btn-grow:hover {
   @apply shadow-lg;
@@ -40,6 +51,10 @@ a {
 
 
 @tailwind utilities;
+
+.text-color-inherit {
+  color: inherit;
+}
 
 .transition {
   transition: all 0.2s ease;

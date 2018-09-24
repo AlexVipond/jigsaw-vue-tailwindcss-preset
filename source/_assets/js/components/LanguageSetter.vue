@@ -1,43 +1,43 @@
 <template lang="html">
-  <button
-  class="cursor-pointer relative flex items-center transition"
-  @click="open = !open"
-  @mouseover="mouseover = true"
-  @mouseleave="mouseover = false"
-  >
-    <transition
-    name="slide-in-left"
-    :css="false"
-    @before-enter="beforeEnter"
-    @enter="enter"
-    @leave="leave"
-    >
-      <span v-if="open" v-else-if="mouseover">{{ languageName }}</span>
-    </transition>
+  <div class="cursor-pointer relative transition flex items-center">
+    <button
+    class="flex items-center text-color-inherit"
+    @click="open = !open"
+    @mouseover="showLanguageName = true"
+    @mouseleave="showLanguageName = false">
+      <transition
+      name="slide-in-left"
+      :css="false"
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+      >
+        <span v-show="open || showLanguageName">{{ languageName }}</span>
+      </transition>
 
-    <svg class="inline-block h-4 w-4 ml-2 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="2" y1="12" x2="22" y2="12"></line>
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-    </svg>
+      <svg class="inline-block h-4 w-4 ml-2 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+    </button>
 
     <dropdown-menu
     class="absolute pin-b pin-l move-down-100 rounded-sm overflow-hidden shadow-lg"
     :class="[optionsBgColor, optionsTextColor, optionsZIndex]"
     :open="open"
-    @click="open = !open"
     >
-      <div
+      <li
       class="py-2 px-3 transition"
       :class="[optionHoverBgColor, optionHoverTextColor]"
       v-for="language in inactiveLanguages"
       :key="language.code"
-      @click="setLanguage(language.code)"
+      @click="setLanguage(language.code); open = !open"
       >
         {{ language.name }}
-      </div>
+      </li>
     </dropdown-menu>
-  </button>
+  </div>
 </template>
 
 <script>
@@ -51,7 +51,7 @@ export default {
   data () {
     return {
       open: false,
-      mouseover: false,
+      showLanguageName: false,
       language: 'en',
       languages: [
         {
@@ -102,7 +102,6 @@ export default {
         { duration: 200, complete: done }
       )
     }
-
   },
 }
 </script>

@@ -7,7 +7,7 @@
 
   <nav class="absolute z-30 pin-t pin-l pin-r container mx-auto flex items-center py-4 px-8">
     <language-setter
-    class="rounded-sm p-1 ml-auto text-gray-200"
+    class="rounded-sm p-1 ml-auto h-8 text-gray-200"
     options-bg-color="bg-white"
     options-text-color="text-primary-600"
     options-z-index="z-30"
@@ -16,7 +16,7 @@
     ></language-setter>
   </nav>
 
-  <header id="landing-page" class="flex relative h-screen min-h-400 flex items-center bg-center bg-no-repeat bg-fixed bg-cover" style="background-image: url(https://res.cloudinary.com/duib7ae0a/image/upload/q_auto,f_auto,w_1500,e_contrast:-30/jigsaw-vue-tailwind-preset/building-blocks.jpg)">
+  <header id="landing-page" class="flex relative h-screen min-h-400 flex items-center bg-center bg-no-repeat bg-fixed bg-cover" style="background-image: url({{ $page->landing_page_image }})">
     <div class="absolute z-10 pin-t pin-l w-full h-full bg-true-black-50"></div>
 
     <div class="relative z-20 container mx-auto px-8 py-16">

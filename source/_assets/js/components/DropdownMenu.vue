@@ -6,11 +6,11 @@
   @enter="enter"
   @leave="leave"
   >
-    <div class="cursor-pointer"
+    <ul class="cursor-pointer list-reset"
     v-if="open"
     >
       <slot></slot>
-    </div>
+    </ul>
   </transition>
 </template>
 

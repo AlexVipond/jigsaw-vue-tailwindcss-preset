@@ -633,6 +633,10 @@ a {
   text-decoration: none;
 }
 
+button:focus {
+  outline: 0;
+}
+
 .container {
   width: 100%;
 }
@@ -676,11 +680,17 @@ a {
   padding-right: .75rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
-  border-radius: .25rem;
+  border-radius: 9999px;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    border-radius: .25rem;
+  }
 }
 
 .btn-grow:hover {
@@ -22576,6 +22586,10 @@ a {
 
 .active\:z-auto:active {
   z-index: auto;
+}
+
+.text-color-inherit {
+  color: inherit;
 }
 
 .transition {

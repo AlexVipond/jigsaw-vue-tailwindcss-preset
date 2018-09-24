@@ -10,8 +10,8 @@ This code collection provides opinionated scaffolding to satisfy basic needs of 
 
 ## Utility classes
 - TailwindCSS defaults
-- Custom TailwindCSS utilities for text shadows, transitions, rotations, translations
-- Button component class, with different options for hover behavior
+- Custom TailwindCSS utilities for text shadows, transitions, rotations, translations, and text color inheritance
+- Button component class, with modifiers for size and hover behavior
 
 ## Vue components
 - Modal background
