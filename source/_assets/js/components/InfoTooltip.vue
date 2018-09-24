@@ -7,11 +7,11 @@
   @leave="leave"
   >
     <div class="absolute pin-t pin-l shadow-lg origin-top-middle"
-    :class="[zIndex, bgColor, infoStyles.classes[dropdownArrowPosition]]"
-    :style="infoStyles.inline[dropdownArrowPosition]"
+    :class="[zIndex, bgColor, infoStyles.classes[tooltipArrowPosition]]"
+    :style="infoStyles.inline[tooltipArrowPosition]"
     v-if="open"
     >
-      <div class="absolute h-0 w-0 border-6 bg-transparent origin-middle" :class="dropdownArrowBorderColor" style="border-right-color: transparent; border-bottom-color: transparent;" :style="dropdownArrowStyles.inline[dropdownArrowPosition]"></div>
+      <div class="absolute h-0 w-0 border-6 bg-transparent origin-middle" :class="tooltipArrowBorderColor" style="border-right-color: transparent; border-bottom-color: transparent;" :style="tooltipArrowStyles.inline[tooltipArrowPosition]"></div>
       <div class="p-4" :class="textColor">
         <slot></slot>
       </div>
@@ -23,10 +23,10 @@
 import Velocity from 'velocity-animate'
 
 export default {
-  props: ['open', 'zIndex', 'bgColor', 'textColor', 'dropdownArrowBorderColor', 'dropdownArrowPosition', 'iconHeight', 'iconWidth'],
+  props: ['open', 'zIndex', 'bgColor', 'textColor', 'tooltipArrowBorderColor', 'tooltipArrowPosition', 'iconHeight', 'iconWidth'],
   data () {
     return {
-      dropdownArrowStyles: {
+      tooltipArrowStyles: {
         'inline': {
           'top-left-top': 'transform: translateY(-100%) translateX(0%) rotate(270deg);',
           'top-left-left': 'transform: translateY(0%) translateX(-100%) rotate(90deg);'

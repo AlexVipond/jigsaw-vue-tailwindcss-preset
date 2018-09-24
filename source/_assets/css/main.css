@@ -4,10 +4,14 @@
   @apply font-400;
 }
 
+a {
+  @apply no-underline
+}
+
 @tailwind components;
 
 .btn {
-  @apply cursor-pointer inline-flex items-center justify-center px-3 py-2 rounded no-underline shadow transition-fast;
+  @apply cursor-pointer inline-flex items-center justify-center px-3 py-2 rounded shadow transition-fast;
 }
 
 .btn-grow:hover {

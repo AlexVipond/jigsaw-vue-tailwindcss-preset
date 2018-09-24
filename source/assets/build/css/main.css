@@ -633,6 +633,10 @@ table {
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 100%;
 }
@@ -677,7 +681,6 @@ table {
   padding-top: .5rem;
   padding-bottom: .5rem;
   border-radius: .25rem;
-  text-decoration: none;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   -webkit-transition: all .1s ease;

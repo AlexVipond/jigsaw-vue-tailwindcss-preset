@@ -3,7 +3,7 @@
     <!-- Toolbar -->
     <div class="relative flex px-8">
       <div class="relative flex-1">
-        <svg class="cursor-pointer inline-block h-6 w-6 text-primary hover:scale-110 active:scale-100 stroke-current transition" @mouseover="infoDropdownOpen = true" @mouseout="infoDropdownOpen = false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="cursor-pointer inline-block h-6 w-6 text-primary hover:scale-110 active:scale-100 stroke-current transition" @mouseover="infoTooltipOpen = true" @mouseout="infoTooltipOpen = false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="12" y1="16" x2="12" y2="12"></line>
           <line x1="12" y1="8" x2="12" y2="8"></line>
@@ -28,19 +28,19 @@
       </div>
     </div>
 
-    <!-- Info dropdown -->
+    <!-- Info tooltip -->
     <portal to="contact-modal-info">
-      <!-- <info-dropdown class="w-full tracking-wide leading-tight"
+      <!-- <info-tooltip class="w-full tracking-wide leading-tight"
       z-index="z-50"
       bg-color="bg-primary"
       text-color="text-primary-lightest"
-      dropdown-arrow-border-color="border-primary"
-      dropdown-arrow-position="top-left-top"
+      tooltip-arrow-border-color="border-primary"
+      tooltip-arrow-position="top-left-top"
       icon-height="1.5rem"
       icon-width="1.5rem"
-      :open="infoDropdownOpen"
+      :open="infoTooltipOpen"
       >
-      </info-dropdown> -->
+    </info-tooltip> -->
     </portal>
 
     <!-- Contact form -->
@@ -89,11 +89,11 @@
 </template>
 
 <script>
-import InfoDropdown from '../components/InfoDropdown.vue'
+import InfoTooltip from '../components/InfoTooltip.vue'
 
 export default {
   components: {
-    InfoDropdown
+    InfoTooltip
   },
   props: ['language', 'open'],
   data () {

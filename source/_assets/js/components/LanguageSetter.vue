@@ -52,10 +52,6 @@ export default {
         {
           code: 'es',
           name: 'Español'
-        },
-        {
-          code: 'pt',
-          name: 'Português'
         }
       ]
     }
