@@ -1,8 +1,8 @@
 <template>
   <div class="">
-    <div class="text-xl md:text-2xl font-600 text-primary-gray-200 text-shadow">
-      <h3 class="block mb-2">{{ messages[language].value_secondary }}.</h3>
-      <h3 class="block">{{ messages[language].value_tertiary }}.</h3>
+    <div class="text-xl md:text-2xl text-primary-gray-200 text-shadow">
+      <h3 class="block mb-2 font-500">{{ messages[language].value_secondary }}.</h3>
+      <h3 class="block font-500">{{ messages[language].value_tertiary }}.</h3>
     </div>
 
     <h2 class="inline-block mt-4 mb-12 p-1 font-600 text-3xl md:text-5xl leading-none text-primary-100 text-shadow">{{ messages[language].value_primary }}.</h2>

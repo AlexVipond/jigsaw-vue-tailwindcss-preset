@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
   </head>
 
-  <body class="antialiased font-sans bg-primary-600">
+  <body class="antialiased font-sans bg-primary-700">
     @yield('body')
 
     @include('_partials.footer')

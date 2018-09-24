@@ -10,8 +10,12 @@
 </template>
 
 <script>
+import ModalBackground from '../components/ModalBackground.vue'
 
 export default {
+  components: {
+    // ModalBackground,
+  },
   props: ['language'],
   data () {
     return {

@@ -14,10 +14,10 @@ This code collection provides opinionated scaffolding to satisfy basic needs of 
 - Button component class, with different options for hover behavior
 
 ## Vue components
-- Modal overlay
-- Language setter
+- Modal background
 - Dropdown menu
+- Info tooltip
+- Contact form
+- Language setter
 - Value proposition
 - Primary and secondary calls to action
-- Contact form
-- Info tooltip

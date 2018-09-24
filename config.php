@@ -18,7 +18,7 @@ return [
       sensible default
     ',
     'google_analytics_id' => 'google_analytics_id',
-    'landing_page_image' => 'https://res.cloudinary.com/duib7ae0a/image/upload/q_auto,f_auto,w_1500,a_hflip/jigsaw-vue-tailwind-preset/north-lake.jpg',
+    'landing_page_image' => 'https://res.cloudinary.com/duib7ae0a/image/upload/q_auto,f_auto,w_1500/jigsaw-vue-tailwind-preset/building-blocks.jpg',
     'copyright_year' => '2018',
     'email' => 'email@example.com',
     'phone' => '1-234-567-8910',

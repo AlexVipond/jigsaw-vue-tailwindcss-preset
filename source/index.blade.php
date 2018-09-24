@@ -16,8 +16,8 @@
     ></language-setter>
   </nav>
 
-  <header id="landing-page" class="flex relative h-screen min-h-400 flex items-center bg-center bg-no-repeat bg-fixed bg-cover" style="background-image: url({{ $page->landing_page_image }})">
-    <div class="absolute z-10 pin-t pin-l w-full h-full bg-true-black-40"></div>
+  <header id="landing-page" class="flex relative h-screen min-h-400 flex items-center bg-center bg-no-repeat bg-fixed bg-cover" style="background-image: url(https://res.cloudinary.com/duib7ae0a/image/upload/q_auto,f_auto,w_1500,e_contrast:-30/jigsaw-vue-tailwind-preset/building-blocks.jpg)">
+    <div class="absolute z-10 pin-t pin-l w-full h-full bg-true-black-50"></div>
 
     <div class="relative z-20 container mx-auto px-8 py-16">
       <value-proposition :language="language"></value-proposition>
@@ -25,14 +25,14 @@
       <div class="inline-flex flex-col sm:flex-row">
         <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset" target="_blank" rel="noopener">
           <primary-call-to-action
-          class="md:btn-lg btn-grow mb-6 sm:mb-0 sm:mr-6 bg-white text-primary-600"
+          class="md:btn-lg btn-grow mb-6 sm:mb-0 sm:mr-6 bg-primary font-600 tracking text-primary-100"
           :language="language">
           </primary-call-to-action>
         </a>
 
         <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme" target="_blank" rel="noopener">
           <secondary-call-to-action
-          class="md:btn-lg btn-grow border-2 border-primary-gray-100 text-primary-gray-100"
+          class="md:btn-lg btn-grow bg-white text-primary-600"
           :language="language"
           >
           </secondary-call-to-action>

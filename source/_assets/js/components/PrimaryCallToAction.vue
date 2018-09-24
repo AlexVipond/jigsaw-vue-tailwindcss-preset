@@ -10,21 +10,21 @@
     <span class="mx-2">{{ messages[language].call_to_action }}</span>
 
     <portal to="modals">
-      <modal-overlay z-index="z-40" :open="modalOpen" @close="modalOpen = false">
+      <modal-background z-index="z-40" :open="modalOpen" @close="modalOpen = false">
         <contact-form :language="language" :open="modalOpen" @close="modalOpen = false"></contact-form>
-      </modal-overlay>
+      </modal-background>
     </portal>
   </button>
 </template>
 
 <script>
-import ModalOverlay from '../components/ModalOverlay.vue'
+import ModalBackground from '../components/ModalBackground.vue'
 // import ContactForm from '../components/ContactForm.vue'
 
 export default {
   props: ['language'],
   components: {
-    ModalOverlay,
+    ModalBackground,
     // ContactForm,
   },
   data () {
