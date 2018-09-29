@@ -36,10 +36,10 @@ export default {
       modalOpen: false,
       messages: {
         en: {
-          call_to_action: 'Fork repository'
+          call_to_action: 'Clone repository'
         },
         es: {
-          call_to_action: 'Fork el repositorio'
+          call_to_action: 'Clonar repositorio'
         }
       }
     }

@@ -7,28 +7,28 @@ var PortalVue = require('portal-vue')
 Vue.use(PortalVue)
 
 
-// Import my Vue components
+// Import my Vue components and data
+import computeLanguage from './scripts/compute-language.js'
+import languageData from './data/languageData.json'
+import LanguageChanger from './components/LanguageChanger.vue'
+
 import ValueProposition from './components/ValueProposition.vue'
 import PrimaryCallToAction from './components/PrimaryCallToAction.vue'
 import SecondaryCallToAction from './components/SecondaryCallToAction.vue'
-import LanguageSetter from './components/LanguageSetter.vue'
 
 
 // Initialize app
 let app = new Vue({
   el: "#app",
   data: {
-    language: 'en',
-    languageSetterOpen: false,
-    messages: {
-      en: {
-        primary_call_to_action: 'Click here!',
-        secondary_call_to_action: '(Or here)'
-      },
-      es: {
-        primary_call_to_action: 'Haga click aqui!',
-        secondary_call_to_action: '(O aqui)'
-      }
+    language: ''
+  },
+  computed: {
+    defaultLanguage () {
+      return languageData.defaultLanguage
+    },
+    languages () {
+      return languageData.languages
     }
   },
   methods: {
@@ -40,6 +40,9 @@ let app = new Vue({
     ValueProposition,
     PrimaryCallToAction,
     SecondaryCallToAction,
-    LanguageSetter
+    LanguageChanger
+  },
+  created () {
+    this.language = computeLanguage(this.languages, this.defaultLanguage)
   }
 });

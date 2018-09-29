@@ -112,7 +112,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/LanguageSetter.vue":
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/LanguageChanger.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -168,19 +168,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: {
     DropdownMenu: __WEBPACK_IMPORTED_MODULE_0__components_DropdownMenu_vue___default.a
   },
-  props: ['optionsBgColor', 'optionsTextColor', 'optionsZIndex', 'optionHoverBgColor', 'optionHoverTextColor'],
+  props: ['language', 'languages', 'optionsBgColor', 'optionsTextColor', 'optionsZIndex', 'optionHoverBgColor', 'optionHoverTextColor'],
   data: function data() {
     return {
       open: false,
-      showLanguageName: false,
-      language: 'en',
-      languages: [{
-        code: 'en',
-        name: 'English'
-      }, {
-        code: 'es',
-        name: 'Español'
-      }]
+      showLanguageName: false
     };
   },
 
@@ -188,8 +180,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     languageName: function languageName() {
       var _this = this;
 
-      var language = this.languages.find(function (language) {
-        return language.code === _this.language;
+      var language = this.languages.find(function (lang) {
+        return lang.code === _this.language;
       });
 
       return language.name;
@@ -197,15 +189,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     inactiveLanguages: function inactiveLanguages() {
       var _this2 = this;
 
-      return this.languages.filter(function (language) {
-        return language.code !== _this2.language;
+      return this.languages.filter(function (lang) {
+        return lang.code !== _this2.language;
       });
     }
   },
   methods: {
-    setLanguage: function setLanguage(languageCode) {
-      this.language = languageCode;
-      this.$emit('set-language', this.language);
+    setLanguage: function setLanguage(language) {
+      this.$emit('set-language', language);
     },
     beforeEnter: function beforeEnter(el) {
       Velocity(el, { opacity: 0, translateX: '100%' }, { duration: 0 });
@@ -264,10 +255,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       modalOpen: false,
       messages: {
         en: {
-          call_to_action: 'Fork repository'
+          call_to_action: 'Clone repository'
         },
         es: {
-          call_to_action: 'Fork el repositorio'
+          call_to_action: 'Clonar repositorio'
         }
       }
     };
@@ -6347,7 +6338,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-1eda170d\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/LanguageSetter.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-31d9a7a4\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/LanguageChanger.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -6396,7 +6387,8 @@ var render = function() {
                       value: _vm.open || _vm.showLanguageName,
                       expression: "open || showLanguageName"
                     }
-                  ]
+                  ],
+                  staticClass: "text-lg"
                 },
                 [_vm._v(_vm._s(_vm.languageName))]
               )
@@ -6406,7 +6398,8 @@ var render = function() {
           _c(
             "svg",
             {
-              staticClass: "inline-block h-4 w-4 ml-2 stroke-current",
+              staticClass:
+                "inline-block h-4 w-4 md:h-6 md:w-6 ml-2 stroke-current",
               attrs: {
                 xmlns: "http://www.w3.org/2000/svg",
                 viewBox: "0 0 24 24",
@@ -6446,7 +6439,7 @@ var render = function() {
             "li",
             {
               key: language.code,
-              staticClass: "py-2 px-3 transition",
+              staticClass: "py-2 px-3 text-lg transition",
               class: [_vm.optionHoverBgColor, _vm.optionHoverTextColor],
               on: {
                 click: function($event) {
@@ -6469,7 +6462,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1eda170d", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-31d9a7a4", module.exports)
   }
 }
 
@@ -6596,7 +6589,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", {
       staticClass:
-        "mb-12 md:text-2xl leading-normal text-primary-gray-200 text-shadow",
+        "mb-12 text-lg md:text-2xl leading-normal text-primary-gray-200 text-shadow",
       domProps: {
         innerHTML: _vm._s(_vm.messages[_vm.language].value_description)
       }
@@ -17708,15 +17701,15 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ "./source/_assets/js/components/LanguageSetter.vue":
+/***/ "./source/_assets/js/components/LanguageChanger.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
 /* script */
-var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/LanguageSetter.vue")
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/LanguageChanger.vue")
 /* template */
-var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-1eda170d\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/LanguageSetter.vue")
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-31d9a7a4\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/LanguageChanger.vue")
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17733,7 +17726,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "source/_assets/js/components/LanguageSetter.vue"
+Component.options.__file = "source/_assets/js/components/LanguageChanger.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -17742,9 +17735,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1eda170d", Component.options)
+    hotAPI.createRecord("data-v-31d9a7a4", Component.options)
   } else {
-    hotAPI.reload("data-v-1eda170d", Component.options)
+    hotAPI.reload("data-v-31d9a7a4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -17900,6 +17893,13 @@ module.exports = Component.exports
 
 /***/ }),
 
+/***/ "./source/_assets/js/data/languageData.json":
+/***/ (function(module, exports) {
+
+module.exports = {"defaultLanguage":"en","languages":[{"code":"en","name":"English"},{"code":"es","name":"Español"}]}
+
+/***/ }),
+
 /***/ "./source/_assets/js/main.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17909,14 +17909,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_velocity_animate__ = __webpack_require__("./node_modules/velocity-animate/velocity.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_velocity_animate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_velocity_animate__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ValueProposition_vue__ = __webpack_require__("./source/_assets/js/components/ValueProposition.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ValueProposition_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_ValueProposition_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PrimaryCallToAction_vue__ = __webpack_require__("./source/_assets/js/components/PrimaryCallToAction.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PrimaryCallToAction_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_PrimaryCallToAction_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_SecondaryCallToAction_vue__ = __webpack_require__("./source/_assets/js/components/SecondaryCallToAction.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_SecondaryCallToAction_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_SecondaryCallToAction_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LanguageSetter_vue__ = __webpack_require__("./source/_assets/js/components/LanguageSetter.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LanguageSetter_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_LanguageSetter_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scripts_compute_language_js__ = __webpack_require__("./source/_assets/js/scripts/compute-language.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_languageData_json__ = __webpack_require__("./source/_assets/js/data/languageData.json");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_languageData_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__data_languageData_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_LanguageChanger_vue__ = __webpack_require__("./source/_assets/js/components/LanguageChanger.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_LanguageChanger_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_LanguageChanger_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ValueProposition_vue__ = __webpack_require__("./source/_assets/js/components/ValueProposition.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ValueProposition_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_ValueProposition_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_PrimaryCallToAction_vue__ = __webpack_require__("./source/_assets/js/components/PrimaryCallToAction.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_PrimaryCallToAction_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_PrimaryCallToAction_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_SecondaryCallToAction_vue__ = __webpack_require__("./source/_assets/js/components/SecondaryCallToAction.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_SecondaryCallToAction_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_SecondaryCallToAction_vue__);
 // Import third-party libraries and components
 
 
@@ -17925,7 +17928,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var PortalVue = __webpack_require__("./node_modules/portal-vue/dist/portal-vue.js");
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(PortalVue);
 
-// Import my Vue components
+// Import my Vue components and data
+
+
+
 
 
 
@@ -17935,17 +17941,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(PortalVue);
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: "#app",
   data: {
-    language: 'en',
-    languageSetterOpen: false,
-    messages: {
-      en: {
-        primary_call_to_action: 'Click here!',
-        secondary_call_to_action: '(Or here)'
-      },
-      es: {
-        primary_call_to_action: 'Haga click aqui!',
-        secondary_call_to_action: '(O aqui)'
-      }
+    language: ''
+  },
+  computed: {
+    defaultLanguage: function defaultLanguage() {
+      return __WEBPACK_IMPORTED_MODULE_3__data_languageData_json___default.a.defaultLanguage;
+    },
+    languages: function languages() {
+      return __WEBPACK_IMPORTED_MODULE_3__data_languageData_json___default.a.languages;
     }
   },
   methods: {
@@ -17954,12 +17957,57 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     }
   },
   components: {
-    ValueProposition: __WEBPACK_IMPORTED_MODULE_2__components_ValueProposition_vue___default.a,
-    PrimaryCallToAction: __WEBPACK_IMPORTED_MODULE_3__components_PrimaryCallToAction_vue___default.a,
-    SecondaryCallToAction: __WEBPACK_IMPORTED_MODULE_4__components_SecondaryCallToAction_vue___default.a,
-    LanguageSetter: __WEBPACK_IMPORTED_MODULE_5__components_LanguageSetter_vue___default.a
+    ValueProposition: __WEBPACK_IMPORTED_MODULE_5__components_ValueProposition_vue___default.a,
+    PrimaryCallToAction: __WEBPACK_IMPORTED_MODULE_6__components_PrimaryCallToAction_vue___default.a,
+    SecondaryCallToAction: __WEBPACK_IMPORTED_MODULE_7__components_SecondaryCallToAction_vue___default.a,
+    LanguageChanger: __WEBPACK_IMPORTED_MODULE_4__components_LanguageChanger_vue___default.a
+  },
+  created: function created() {
+    this.language = Object(__WEBPACK_IMPORTED_MODULE_2__scripts_compute_language_js__["a" /* default */])(this.languages, this.defaultLanguage);
   }
 });
+
+/***/ }),
+
+/***/ "./source/_assets/js/scripts/compute-language.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function computeLanguage(availableLanguages, defaultLanguage) {
+  var language = navigator.language;
+  var foundIndex = availableLanguages.findIndex(function (lang) {
+    return lang.code === language;
+  });
+
+  if (foundIndex > -1) {
+    language = language;
+  } else if (language.length > 2) {
+    language = language.slice(0, 2);
+    foundIndex = availableLanguages.findIndex(function (lang) {
+      return lang.code === language;
+    });
+
+    if (foundIndex > -1) {
+      language = language;
+    } else {
+      language = defaultLanguage;
+    }
+  } else if (language.length === 2) {
+    foundIndex = availableLanguages.findIndex(function (lang) {
+      return lang.code.slice(0, 2) === language;
+    });
+
+    if (foundIndex > -1) {
+      language = language;
+    } else {
+      language = defaultLanguage;
+    }
+  }
+
+  return language;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (computeLanguage);
 
 /***/ }),
 

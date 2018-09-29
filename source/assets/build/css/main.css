@@ -683,6 +683,7 @@ button:focus {
   border-radius: 9999px;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  font-size: 1.125rem;
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
 }
@@ -690,7 +691,16 @@ button:focus {
 @media screen and (min-width: 768px) {
   .btn {
     border-radius: .25rem;
+    font-size: 1.25rem;
   }
+}
+
+.btn-lg {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1.25rem;
 }
 
 .btn-grow:hover {
@@ -712,20 +722,6 @@ button:focus {
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   -webkit-transform: translateY(0) scale(1);
           transform: translateY(0) scale(1);
-}
-
-.btn-lg {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: 1.125rem;
-}
-
-@media screen and (min-width: 768px) {
-  .btn-lg {
-    font-size: 1.25rem;
-  }
 }
 
 .list-reset {
@@ -22739,7 +22735,7 @@ button:focus {
     padding-right: 1rem;
     padding-top: .75rem;
     padding-bottom: .75rem;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   .sm\:list-reset {
@@ -44625,7 +44621,7 @@ button:focus {
     padding-right: 1rem;
     padding-top: .75rem;
     padding-bottom: .75rem;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   .md\:list-reset {
@@ -66511,7 +66507,7 @@ button:focus {
     padding-right: 1rem;
     padding-top: .75rem;
     padding-bottom: .75rem;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   .lg\:list-reset {
@@ -88397,7 +88393,7 @@ button:focus {
     padding-right: 1rem;
     padding-top: .75rem;
     padding-bottom: .75rem;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   .xl\:list-reset {
