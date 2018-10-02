@@ -257,6 +257,7 @@ module.exports = {
 
   fonts: {
     'sans': [
+      'Oxygen',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',

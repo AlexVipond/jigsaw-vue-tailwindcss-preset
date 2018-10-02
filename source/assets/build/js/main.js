@@ -65,6 +65,163 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/ContactForm.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue__ = __webpack_require__("./source/_assets/js/components/InfoTooltip.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    InfoTooltip: __WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue___default.a
+  },
+  props: ['language', 'open'],
+  data: function data() {
+    return {
+      infoTooltipOpen: false,
+      messages: {
+        en: {
+          title: 'Great choice!',
+          subtitle: 'Fill out this nifty form:',
+          info: '<p class="mb-2">I do freelance web design (in English and Spanish), so I\'d love to get in touch!</p>\
+          <p>Let me know what you need a website for, and I\'ll get back to you as soon as possible.</p>',
+          email: 'Email',
+          subject: 'Subject line',
+          subject_placeholder: 'Make me a website, please!',
+          message: 'Message',
+          message_placeholder: 'What\'s on your mind?',
+          submit_form: 'Send message',
+          not_sure: 'Not sure yet? You can ',
+          alternate_action: 'learn more about this project, instead'
+        },
+        es: {
+          title: 'Bien elegido!',
+          subtitle: 'Se puede llenar este formulario:',
+          info: '<p class="mb-2">Yo diseño sitios web (en ingles y español), y me gustaría que nos pongamos en contacto!</p>\
+          <p>Describa porque necesita sitio web, y le responderé a Ud. lo más pronto que sea posible.</p>',
+          email: 'Correo electrónico',
+          subject: 'Sujeto',
+          subject_placeholder: 'Quiero un sitio web, por favor!',
+          message: 'Mensaje',
+          message_placeholder: 'Que está pensando?',
+          submit_form: 'Enviar mensaje',
+          not_sure: 'Aún no tiene certeza? También se puede,',
+          alternate_action: 'aprender más sobre este proyecto'
+        }
+      }
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/DropdownMenu.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95,6 +252,79 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['open'],
   data: function data() {
     return {};
+  },
+
+  methods: {
+    beforeEnter: function beforeEnter(el) {
+      __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default()(el, { opacity: 0 }, { duration: 0 });
+    },
+    enter: function enter(el, done) {
+      __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default()(el, { opacity: 1 }, { duration: 200, complete: done });
+    },
+    leave: function leave(el, done) {
+      __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default()(el, { opacity: 0 }, { duration: 200, complete: done });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/InfoTooltip.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_velocity_animate__ = __webpack_require__("./node_modules/velocity-animate/velocity.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_velocity_animate__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['open', 'zIndex', 'bgColor', 'textColor', 'tooltipArrowBorderColor', 'tooltipArrowPosition', 'iconHeight', 'iconWidth'],
+  data: function data() {
+    return {
+      tooltipArrowStyles: {
+        'inline': {
+          'top-left-top': 'transform: translateY(-100%) translateX(0%) rotate(270deg);',
+          'top-left-left': 'transform: translateY(0%) translateX(-100%) rotate(90deg);'
+        },
+        'classes': {
+          'top-left-top': '',
+          'top-left-left': ''
+        }
+      },
+      infoStyles: {
+        'inline': {
+          'top-left-top': 'transform: translateX(calc(' + this.iconHeight + ' / 2)) translateY(calc(12px + ' + this.iconWidth + ');',
+          'top-left-left': 'transform: translateY(calc(' + this.iconHeight + ' / 2)) translateX(calc(12px + ' + this.iconWidth + ');'
+        },
+        classes: {
+          'top-left-top': 'rounded-tr rounded-br rounded-bl',
+          'top-left-left': 'rounded-tr rounded-br rounded-bl'
+        }
+      }
+    };
   },
 
   methods: {
@@ -212,11 +442,98 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/ModalBackground.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_velocity_animate__ = __webpack_require__("./node_modules/velocity-animate/velocity.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_velocity_animate__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_clickaway__ = __webpack_require__("./node_modules/vue-clickaway/dist/vue-clickaway.common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_clickaway___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_clickaway__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mixins: [__WEBPACK_IMPORTED_MODULE_1_vue_clickaway__["mixin"]],
+  props: ['open', 'zIndex', 'contentMaxWidth'],
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    beforeEnter: function beforeEnter(el) {
+      el.style.opacity = 0;
+    },
+    enter: function enter(el, done) {
+      __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default()(el, { opacity: 1 }, { duration: 200, complete: done });
+    },
+    leave: function leave(el, done) {
+      __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default()(el, { opacity: 0 }, { duration: 200, complete: done });
+    },
+    clickaway: function clickaway() {
+      this.$emit('close');
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    var escapeListener = function escapeListener(evt) {
+      if (evt.key === 'Escape') {
+        _this.$emit('close');
+      }
+    };
+
+    document.addEventListener('keydown', escapeListener);
+
+    this.$on('hook:beforeDestroy', function () {
+      document.removeEventListener('keydown', escapeListener);
+    });
+  },
+
+  watch: {
+    open: function open() {
+      document.body.classList.toggle('overflow-hidden');
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/PrimaryCallToAction.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ModalBackground_vue__ = __webpack_require__("./source/_assets/js/components/ModalBackground.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ModalBackground_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_ModalBackground_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ContactForm_vue__ = __webpack_require__("./source/_assets/js/components/ContactForm.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ContactForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ContactForm_vue__);
+//
+//
+//
+//
 //
 //
 //
@@ -241,24 +558,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-// import ModalBackground from '../components/ModalBackground.vue'
-// import ContactForm from '../components/ContactForm.vue'
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['language'],
   components: {
-    // ModalBackground,
-    // ContactForm,
+    ModalBackground: __WEBPACK_IMPORTED_MODULE_0__components_ModalBackground_vue___default.a,
+    ContactForm: __WEBPACK_IMPORTED_MODULE_1__components_ContactForm_vue___default.a
   },
+  props: ['language'],
   data: function data() {
     return {
       modalOpen: false,
       messages: {
         en: {
-          call_to_action: 'Clone repository'
+          call_to_action: 'Request a website'
         },
         es: {
-          call_to_action: 'Clonar repositorio'
+          call_to_action: 'Solicitar sitio web'
         }
       }
     };
@@ -307,10 +624,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       messages: {
         en: {
-          call_to_action: 'Learn more'
+          call_to_action: 'View source code'
         },
         es: {
-          call_to_action: 'Aprender más'
+          call_to_action: 'Ver código'
         }
       }
     };
@@ -6228,6 +6545,96 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! VelocityJS
 
 /***/ }),
 
+/***/ "./node_modules/vue-clickaway/dist/vue-clickaway.common.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
+Vue = 'default' in Vue ? Vue['default'] : Vue;
+
+var version = '2.2.2';
+
+var compatible = (/^2\./).test(Vue.version);
+if (!compatible) {
+  Vue.util.warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + Vue.version);
+}
+
+
+
+// @SECTION: implementation
+
+var HANDLER = '_vue_clickaway_handler';
+
+function bind(el, binding, vnode) {
+  unbind(el);
+
+  var vm = vnode.context;
+
+  var callback = binding.value;
+  if (typeof callback !== 'function') {
+    if (true) {
+      Vue.util.warn(
+        'v-' + binding.name + '="' +
+        binding.expression + '" expects a function value, ' +
+        'got ' + callback
+      );
+    }
+    return;
+  }
+
+  // @NOTE: Vue binds directives in microtasks, while UI events are dispatched
+  //        in macrotasks. This causes the listener to be set up before
+  //        the "origin" click event (the event that lead to the binding of
+  //        the directive) arrives at the document root. To work around that,
+  //        we ignore events until the end of the "initial" macrotask.
+  // @REFERENCE: https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+  // @REFERENCE: https://github.com/simplesmiler/vue-clickaway/issues/8
+  var initialMacrotaskEnded = false;
+  setTimeout(function() {
+    initialMacrotaskEnded = true;
+  }, 0);
+
+  el[HANDLER] = function(ev) {
+    // @NOTE: this test used to be just `el.containts`, but working with path is better,
+    //        because it tests whether the element was there at the time of
+    //        the click, not whether it is there now, that the event has arrived
+    //        to the top.
+    // @NOTE: `.path` is non-standard, the standard way is `.composedPath()`
+    var path = ev.path || (ev.composedPath ? ev.composedPath() : undefined);
+    if (initialMacrotaskEnded && (path ? path.indexOf(el) < 0 : !el.contains(ev.target))) {
+      return callback.call(vm, ev);
+    }
+  };
+
+  document.documentElement.addEventListener('click', el[HANDLER], false);
+}
+
+function unbind(el) {
+  document.documentElement.removeEventListener('click', el[HANDLER], false);
+  delete el[HANDLER];
+}
+
+var directive = {
+  bind: bind,
+  update: function(el, binding) {
+    if (binding.value === binding.oldValue) return;
+    bind(el, binding);
+  },
+  unbind: unbind,
+};
+
+var mixin = {
+  directives: { onClickaway: directive },
+};
+
+exports.version = version;
+exports.directive = directive;
+exports.mixin = mixin;
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/component-normalizer.js":
 /***/ (function(module, exports) {
 
@@ -6531,13 +6938,9 @@ var render = function() {
         }
       },
       [
-        _c("path", { attrs: { d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20" } }),
+        _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
         _vm._v(" "),
-        _c("path", {
-          attrs: {
-            d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-          }
-        })
+        _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
       ]
     ),
     _vm._v(" "),
@@ -6556,6 +6959,352 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5ec80c5e\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/ContactForm.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass:
+        "flex flex-col w-full pt-6 pb-8 sm:pt-8 sm:pb-10 bg-white rounded-lg shadow-lg text-black"
+    },
+    [
+      _c("div", { staticClass: "relative flex px-8 mb-4 sm:mb-0" }, [
+        _c(
+          "div",
+          { staticClass: "relative flex-1" },
+          [
+            _c(
+              "svg",
+              {
+                staticClass:
+                  "btn-grow cursor-pointer inline-block h-6 w-6 rounded-full text-primary stroke-current transition",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  "stroke-width": "2",
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round"
+                },
+                on: {
+                  mouseover: function($event) {
+                    _vm.infoTooltipOpen = true
+                  },
+                  mouseout: function($event) {
+                    _vm.infoTooltipOpen = false
+                  }
+                }
+              },
+              [
+                _c("circle", { attrs: { cx: "12", cy: "12", r: "10" } }),
+                _vm._v(" "),
+                _c("line", {
+                  attrs: { x1: "12", y1: "16", x2: "12", y2: "12" }
+                }),
+                _vm._v(" "),
+                _c("line", { attrs: { x1: "12", y1: "8", x2: "12", y2: "8" } })
+              ]
+            ),
+            _vm._v(" "),
+            _c("portal-target", { attrs: { name: "contact-modal-info" } })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "ml-auto" }, [
+          _c(
+            "svg",
+            {
+              staticClass:
+                "cursor-pointer inline-block h-6 w-6 text-gray hover:text-gray-600 transition-fast stroke-current",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                "stroke-width": "2",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              },
+              on: {
+                click: function($event) {
+                  _vm.$emit("close")
+                }
+              }
+            },
+            [
+              _c("line", { attrs: { x1: "18", y1: "6", x2: "6", y2: "18" } }),
+              _vm._v(" "),
+              _c("line", { attrs: { x1: "6", y1: "6", x2: "18", y2: "18" } })
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex items-center justify-center mb-8 px-8" }, [
+        _c("div", { staticClass: "text-center" }, [
+          _c("h2", { staticClass: "mb-2 font-600 text-2xl" }, [
+            _vm._v(_vm._s(_vm.messages[_vm.language].title))
+          ]),
+          _vm._v(" "),
+          _c("h3", { staticClass: "font-400" }, [
+            _vm._v(_vm._s(_vm.messages[_vm.language].subtitle))
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "portal",
+        { attrs: { to: "contact-modal-info" } },
+        [
+          _c(
+            "info-tooltip",
+            {
+              staticClass: "w-full tracking-wide leading-tight",
+              attrs: {
+                "z-index": "z-50",
+                "bg-color": "bg-primary-500",
+                "text-color": "text-primary-100",
+                "tooltip-arrow-border-color": "border-primary",
+                "tooltip-arrow-position": "top-left-top",
+                "icon-height": "1.5rem",
+                "icon-width": "1.5rem",
+                open: _vm.infoTooltipOpen
+              }
+            },
+            [
+              _c("span", {
+                domProps: { innerHTML: _vm._s(_vm.messages[_vm.language].info) }
+              })
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          staticClass: "flex-1 px-8 overflow-scroll",
+          attrs: {
+            action: "https://formspree.io/alex.r.vipond@gmail.com",
+            method: "POST"
+          }
+        },
+        [
+          _c("label", { staticClass: "block mb-4" }, [
+            _c("span", { staticClass: "block my-2 text-sm font-500" }, [
+              _vm._v(
+                "\n        " +
+                  _vm._s(_vm.messages[_vm.language].email) +
+                  ":\n      "
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass:
+                "block w-full px-3 py-1 rounded bg-gray-200 leading-normal text-black",
+              attrs: {
+                type: "email",
+                name: "email",
+                placeholder: "email@example.com"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("label", { staticClass: "block mb-4" }, [
+            _c("span", { staticClass: "block my-2 text-sm font-500" }, [
+              _vm._v(
+                "\n        " +
+                  _vm._s(_vm.messages[_vm.language].subject) +
+                  ":\n      "
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass:
+                "block w-full px-3 py-1 rounded bg-gray-200 leading-normal text-black",
+              attrs: {
+                type: "text",
+                name: "_subject",
+                placeholder: _vm.messages[_vm.language].subject_placeholder
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "block my-2 text-sm font-500" }, [
+            _vm._v(
+              "\n      " +
+                _vm._s(_vm.messages[_vm.language].message) +
+                ":\n    "
+            )
+          ]),
+          _vm._v(" "),
+          _c("textarea", {
+            staticClass: "h-24 w-full px-3 py-3 rounded bg-gray-200 mb-4",
+            attrs: {
+              name: "message",
+              placeholder: _vm.messages[_vm.language].message_placeholder
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "btn btn-lift flex items-center w-full mb-4 bg-primary text-primary-100 transition",
+              attrs: { type: "submit" }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    "stroke-width": "2",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("polyline", { attrs: { points: "22,6 12,13 2,6" } })
+                ]
+              ),
+              _vm._v(
+                "\n      " +
+                  _vm._s(_vm.messages[_vm.language].submit_form) +
+                  "\n    "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-sm text-gray-500" }, [
+            _c("p", {}, [
+              _vm._v(
+                "\n        " +
+                  _vm._s(_vm.messages[_vm.language].not_sure) +
+                  "\n        "
+              ),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "text-primary no-underline hover:underline transition",
+                  attrs: {
+                    href:
+                      "https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme",
+                    target: "_blank",
+                    rel: "noopener"
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n          " +
+                      _vm._s(_vm.messages[_vm.language].alternate_action)
+                  )
+                ]
+              ),
+              _vm._v(".\n      ")
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5ec80c5e", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-60b6da4f\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/InfoTooltip.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "transition",
+    {
+      attrs: { appear: "", css: false },
+      on: {
+        "before-enter": _vm.beforeEnter,
+        enter: _vm.enter,
+        leave: _vm.leave
+      }
+    },
+    [
+      _vm.open
+        ? _c(
+            "div",
+            {
+              staticClass: "absolute pin-t pin-l shadow-lg origin-top-middle",
+              class: [
+                _vm.zIndex,
+                _vm.bgColor,
+                _vm.infoStyles.classes[_vm.tooltipArrowPosition]
+              ],
+              style: _vm.infoStyles.inline[_vm.tooltipArrowPosition]
+            },
+            [
+              _c("div", {
+                staticClass:
+                  "absolute h-0 w-0 border-6 bg-transparent origin-middle",
+                class: _vm.tooltipArrowBorderColor,
+                staticStyle: {
+                  "border-right-color": "transparent",
+                  "border-bottom-color": "transparent"
+                },
+                style: _vm.tooltipArrowStyles.inline[_vm.tooltipArrowPosition]
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "p-4", class: _vm.textColor },
+                [_vm._t("default")],
+                2
+              )
+            ]
+          )
+        : _vm._e()
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-60b6da4f", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-9130c18a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/ValueProposition.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6566,7 +7315,9 @@ var render = function() {
   return _c("div", {}, [
     _c(
       "div",
-      { staticClass: "text-xl md:text-2xl text-primary-gray-200 text-shadow" },
+      {
+        staticClass: "text-xl md:text-2xl text-primary-gray-200 text-shadow-md"
+      },
       [
         _c("h3", { staticClass: "block mb-2 font-500" }, [
           _vm._v(_vm._s(_vm.messages[_vm.language].value_secondary) + ".")
@@ -6608,6 +7359,68 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-ad14ead6\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/ModalBackground.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "transition",
+    {
+      attrs: { name: "fade-in", css: false },
+      on: {
+        "before-enter": _vm.beforeEnter,
+        enter: _vm.enter,
+        leave: _vm.leave
+      }
+    },
+    [
+      _vm.open
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "fixed pin p-6 bg-true-black-50 flex justify-center items-center",
+              class: _vm.zIndex
+            },
+            [
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "on-clickaway",
+                      rawName: "v-on-clickaway",
+                      value: _vm.clickaway,
+                      expression: "clickaway"
+                    }
+                  ],
+                  staticClass: "inline-block w-full max-h-full flex",
+                  class: [_vm.contentMaxWidth]
+                },
+                [_vm._t("default")],
+                2
+              )
+            ]
+          )
+        : _vm._e()
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ad14ead6", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-ba2a91ea\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/PrimaryCallToAction.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6615,29 +7428,86 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "btn" }, [
-    _c(
-      "svg",
-      {
-        staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
-        attrs: {
-          xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          "stroke-width": "2",
-          "stroke-linecap": "round",
-          "stroke-linejoin": "round"
+  return _c(
+    "button",
+    {
+      staticClass: "btn",
+      on: {
+        click: function($event) {
+          _vm.modalOpen = !_vm.modalOpen
         }
-      },
-      [
-        _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
-        _vm._v(" "),
-        _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
-      ]
-    ),
-    _vm._v(" "),
-    _c("span", [_vm._v(_vm._s(_vm.messages[_vm.language].call_to_action))])
-  ])
+      }
+    },
+    [
+      _c(
+        "svg",
+        {
+          staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
+          attrs: {
+            xmlns: "http://www.w3.org/2000/svg",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            "stroke-width": "2",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round"
+          }
+        },
+        [
+          _c("rect", {
+            attrs: {
+              x: "3",
+              y: "3",
+              width: "18",
+              height: "18",
+              rx: "2",
+              ry: "2"
+            }
+          }),
+          _vm._v(" "),
+          _c("line", { attrs: { x1: "3", y1: "9", x2: "21", y2: "9" } }),
+          _vm._v(" "),
+          _c("line", { attrs: { x1: "9", y1: "21", x2: "9", y2: "9" } })
+        ]
+      ),
+      _vm._v(" "),
+      _c("span", [_vm._v(_vm._s(_vm.messages[_vm.language].call_to_action))]),
+      _vm._v(" "),
+      _c(
+        "portal",
+        { attrs: { to: "modals" } },
+        [
+          _c(
+            "modal-background",
+            {
+              attrs: {
+                "z-index": "z-50",
+                open: _vm.modalOpen,
+                "content-max-width": "max-w-sm"
+              },
+              on: {
+                close: function($event) {
+                  _vm.modalOpen = false
+                }
+              }
+            },
+            [
+              _c("contact-form", {
+                attrs: { language: _vm.language, open: _vm.modalOpen },
+                on: {
+                  close: function($event) {
+                    _vm.modalOpen = false
+                  }
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -17646,10 +18516,65 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./source/_assets/css/fonts.css":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./source/_assets/css/main.css":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./source/_assets/js/components/ContactForm.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/ContactForm.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5ec80c5e\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/ContactForm.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "source/_assets/js/components/ContactForm.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5ec80c5e", Component.options)
+  } else {
+    hotAPI.reload("data-v-5ec80c5e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 
@@ -17701,6 +18626,54 @@ module.exports = Component.exports
 
 /***/ }),
 
+/***/ "./source/_assets/js/components/InfoTooltip.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/InfoTooltip.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-60b6da4f\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/InfoTooltip.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "source/_assets/js/components/InfoTooltip.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-60b6da4f", Component.options)
+  } else {
+    hotAPI.reload("data-v-60b6da4f", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
 /***/ "./source/_assets/js/components/LanguageChanger.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17738,6 +18711,54 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-31d9a7a4", Component.options)
   } else {
     hotAPI.reload("data-v-31d9a7a4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./source/_assets/js/components/ModalBackground.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./source/_assets/js/components/ModalBackground.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-ad14ead6\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./source/_assets/js/components/ModalBackground.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "source/_assets/js/components/ModalBackground.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ad14ead6", Component.options)
+  } else {
+    hotAPI.reload("data-v-ad14ead6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -18015,7 +19036,8 @@ function computeLanguage(availableLanguages, defaultLanguage) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__("./source/_assets/js/main.js");
-module.exports = __webpack_require__("./source/_assets/css/main.css");
+__webpack_require__("./source/_assets/css/main.css");
+module.exports = __webpack_require__("./source/_assets/css/fonts.css");
 
 
 /***/ })

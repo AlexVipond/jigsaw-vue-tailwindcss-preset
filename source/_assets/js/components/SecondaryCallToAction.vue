@@ -2,8 +2,8 @@
   <!-- @click="modalOpen = !modalOpen" -->
   <button class="btn">
     <svg class="inline-block h-4 w-4 mr-2 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      <polyline points="16 18 22 12 16 6"></polyline>
+      <polyline points="8 6 2 12 8 18"></polyline>
     </svg>
 
     <span>{{ messages[language].call_to_action }}</span>
@@ -33,10 +33,10 @@ export default {
     return {
       messages: {
         en: {
-          call_to_action: 'Learn more'
+          call_to_action: 'View source code'
         },
         es: {
-          call_to_action: 'Aprender más'
+          call_to_action: 'Ver código'
         }
       }
     }

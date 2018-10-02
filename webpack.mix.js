@@ -42,4 +42,5 @@ mix.js('source/_assets/js/main.js', 'js')
     .purgeCss({
       folders: ['source'],
     })
+    .postCss('source/_assets/css/fonts.css', 'css')
     .version();

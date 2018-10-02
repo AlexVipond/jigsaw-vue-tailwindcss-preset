@@ -30,6 +30,7 @@
     <link rel="shortcut icon" href="assets/media/images/favicon.png">
 
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+    <link rel="stylesheet" href="{{ mix('css/fonts.css', 'assets/build') }}">
   </head>
 
   <body class="antialiased font-sans bg-primary-700">

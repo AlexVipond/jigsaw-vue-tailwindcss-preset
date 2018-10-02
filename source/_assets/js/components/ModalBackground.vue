@@ -10,7 +10,7 @@
     :class="zIndex"
     v-if="open"
     >
-      <div class="inline-block" v-on-clickaway="clickaway">
+      <div class="inline-block w-full max-h-full flex" :class="[contentMaxWidth]" v-on-clickaway="clickaway">
         <!-- Modal contents -->
         <slot></slot>
       </div>
@@ -24,7 +24,7 @@
 
   export default {
     mixins: [ clickaway ],
-    props: ['open', 'zIndex'],
+    props: ['open', 'zIndex', 'contentMaxWidth'],
     data () {
       return {}
     },
@@ -66,7 +66,6 @@
     watch: {
       open: function() {
         document.body.classList.toggle('overflow-hidden')
-        console.log('here')
       }
     }
   }

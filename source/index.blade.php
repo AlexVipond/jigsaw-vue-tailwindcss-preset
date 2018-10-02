@@ -25,12 +25,10 @@
       <value-proposition :language="language"></value-proposition>
 
       <div class="inline-flex flex-col sm:flex-row">
-        <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset" target="_blank" rel="noopener">
-          <primary-call-to-action
-          class="md:btn-lg btn-grow mb-6 sm:mb-0 sm:mr-6 bg-primary tracking text-primary-100"
-          :language="language">
-          </primary-call-to-action>
-        </a>
+        <primary-call-to-action
+        class="md:btn-lg btn-grow mb-6 sm:mb-0 sm:mr-6 bg-primary tracking-wide font-400 text-primary-100"
+        :language="language">
+        </primary-call-to-action>
 
         <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme" target="_blank" rel="noopener">
           <secondary-call-to-action

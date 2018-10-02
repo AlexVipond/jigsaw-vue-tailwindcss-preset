@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="text-xl md:text-2xl text-primary-gray-200 text-shadow">
+    <div class="text-xl md:text-2xl text-primary-gray-200 text-shadow-md">
       <h3 class="block mb-2 font-500">{{ messages[language].value_secondary }}.</h3>
       <h3 class="block font-500">{{ messages[language].value_tertiary }}.</h3>
     </div>
