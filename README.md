@@ -78,3 +78,12 @@ Add one environment variable, `PHP_VERSION`, with the value set to `7.2`.
 - TailwindCSS defaults, configured to use numeric color shades and font weights (e.g. `font-600` and `gray-200`)
 - Custom TailwindCSS utilities for text shadows, transitions, rotations, translations, and text color inheritance
 - Button component class, with modifiers for size and hover behavior
+
+
+## Useful third party services
+
+- [Formspree](https://formspree.io)
+- [Cloudinary](https://cloudinary.com)
+- [Unsplash](https://unsplash.com)
+- [Netlify](https://netlify.com)
+- [NetlifyCMS](https://netlifycms.org)
