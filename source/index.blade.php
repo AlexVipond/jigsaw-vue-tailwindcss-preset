@@ -7,15 +7,15 @@
 
   <nav class="absolute z-30 pin-t pin-l pin-r container mx-auto flex items-center py-4 px-8">
     <language-changer
-    :language="language"
-    :languages="languages"
-    class="rounded-sm p-1 ml-auto h-8 text-gray-200"
-    options-bg-color="bg-white"
-    options-text-color="text-primary-600"
-    options-z-index="z-30"
-    option-hover-bg-color="hover:bg-primary-200"
-    @set-language="setLanguage"
-    ></language-changer>
+      :language="language"
+      :languages="languages"
+      class="rounded-sm p-1 ml-auto h-8 text-gray-200"
+      options-bg-color="bg-white"
+      options-text-color="text-primary-600"
+      options-z-index="z-30"
+      option-hover-bg-color="hover:bg-primary-200"
+      @set-language="setLanguage">
+    </language-changer>
   </nav>
 
   <header id="landing-page" class="flex relative h-screen min-h-400 flex items-center bg-center bg-no-repeat bg-fixed bg-cover" style="background-image: url({{ $page->landing_page_image }})">
@@ -25,16 +25,22 @@
       <value-proposition :language="language"></value-proposition>
 
       <div class="inline-flex flex-col sm:flex-row">
-        <primary-call-to-action
-        class="md:btn-lg btn-grow mb-6 sm:mb-0 sm:mr-6 bg-primary tracking-wide font-400 text-primary-100"
-        :language="language">
-        </primary-call-to-action>
+        <button class="mb-6 sm:mb-0 sm:mr-6" type="button" name="button">
+          <primary-call-to-action
+            class="btn md:btn-lg btn-grow bg-primary tracking-wide font-400 text-primary-100"
+            :language="language"
+            :show-icon-before-message="true"
+            :show-icon-after-message="false">
+          </primary-call-to-action>
+        </button>
+
 
         <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme" target="_blank" rel="noopener">
           <secondary-call-to-action
-          class="md:btn-lg btn-grow bg-white text-primary-600"
-          :language="language"
-          >
+            class="btn md:btn-lg btn-grow bg-white text-primary-600"
+            :language="language"
+            :show-icon-before-message="true"
+            :show-icon-after-message="false">
           </secondary-call-to-action>
         </a>
       </div>

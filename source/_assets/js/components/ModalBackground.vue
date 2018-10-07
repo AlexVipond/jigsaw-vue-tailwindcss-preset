@@ -24,7 +24,7 @@
 
   export default {
     mixins: [ clickaway ],
-    props: ['open', 'zIndex', 'contentMaxWidth'],
+    props: ['open', 'zIndex', 'contentMaxWidth', 'closeEvent'],
     data () {
       return {}
     },
@@ -47,13 +47,13 @@
         )
       },
       clickaway () {
-        this.$emit('close')
+        this.$emit(this.closeEvent)
       }
     },
     created () {
       const escapeListener = (evt) => {
         if(evt.key === 'Escape') {
-          this.$emit('close')
+          this.$emit(this.closeEvent)
         }
       }
 

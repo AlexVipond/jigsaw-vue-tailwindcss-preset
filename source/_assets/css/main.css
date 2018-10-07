@@ -11,7 +11,15 @@ button:focus {
 @tailwind components;
 
 .btn {
-  @apply cursor-pointer inline-flex items-center justify-center px-3 py-2 rounded-full shadow text-lg transition-fast;
+  @apply cursor-pointer inline-block items-center justify-center px-3 py-2 rounded-full text-lg transition-fast;
+}
+
+.btn:hover {
+  @apply shadow-lg;
+}
+
+.btn:active {
+  transform: translateY(0) scale(1);
 }
 
 @media screen and (min-width: config('screens.md')) {
@@ -28,18 +36,11 @@ button:focus {
 
 
 .btn-grow:hover {
-  @apply shadow-lg;
   transform: scale(1.1);
 }
 
 .btn-lift:hover {
-  @apply shadow-lg;
   transform: translateY(-1px);
-}
-
-.btn:active {
-  @apply shadow;
-  transform: translateY(0) scale(1);
 }
 
 

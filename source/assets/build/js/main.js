@@ -477,7 +477,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mixins: [__WEBPACK_IMPORTED_MODULE_1_vue_clickaway__["mixin"]],
-  props: ['open', 'zIndex', 'contentMaxWidth'],
+  props: ['open', 'zIndex', 'contentMaxWidth', 'closeEvent'],
   data: function data() {
     return {};
   },
@@ -493,7 +493,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       __WEBPACK_IMPORTED_MODULE_0_velocity_animate___default()(el, { opacity: 0 }, { duration: 200, complete: done });
     },
     clickaway: function clickaway() {
-      this.$emit('close');
+      this.$emit(this.closeEvent);
     }
   },
   created: function created() {
@@ -501,7 +501,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     var escapeListener = function escapeListener(evt) {
       if (evt.key === 'Escape') {
-        _this.$emit('close');
+        _this.$emit(_this.closeEvent);
       }
     };
 
@@ -557,6 +557,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -566,7 +584,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     ModalBackground: __WEBPACK_IMPORTED_MODULE_0__components_ModalBackground_vue___default.a,
     ContactForm: __WEBPACK_IMPORTED_MODULE_1__components_ContactForm_vue___default.a
   },
-  props: ['language'],
+  props: ['language', 'showIconBeforeMessage', 'showIconAfterMessage'],
   data: function data() {
     return {
       modalOpen: false,
@@ -612,6 +630,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // import ModalBackground from '../components/ModalBackground.vue'
 
@@ -619,7 +651,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: {
     // ModalBackground,
   },
-  props: ['language'],
+  props: ['language', 'showIconBeforeMessage', 'showIconAfterMessage'],
   data: function data() {
     return {
       messages: {
@@ -6923,28 +6955,52 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "btn" }, [
-    _c(
-      "svg",
-      {
-        staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
-        attrs: {
-          xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "0 0 24 24",
-          fill: "none",
-          "stroke-width": "2",
-          "stroke-linecap": "round",
-          "stroke-linejoin": "round"
-        }
-      },
-      [
-        _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
-        _vm._v(" "),
-        _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
-      ]
-    ),
+  return _c("div", [
+    _vm.showIconBeforeMessage
+      ? _c(
+          "svg",
+          {
+            staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              "stroke-width": "2",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }
+          },
+          [
+            _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
+            _vm._v(" "),
+            _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
+          ]
+        )
+      : _vm._e(),
     _vm._v(" "),
-    _c("span", [_vm._v(_vm._s(_vm.messages[_vm.language].call_to_action))])
+    _c("span", [_vm._v(_vm._s(_vm.messages[_vm.language].call_to_action))]),
+    _vm._v(" "),
+    _vm.showIconAfterMessage
+      ? _c(
+          "svg",
+          {
+            staticClass: "inline-block h-4 w-4 ml-2 stroke-current",
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              "stroke-width": "2",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }
+          },
+          [
+            _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
+            _vm._v(" "),
+            _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
+          ]
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -7333,14 +7389,14 @@ var render = function() {
       "h2",
       {
         staticClass:
-          "inline-block mt-4 mb-12 p-1 font-600 text-3xl md:text-5xl leading-none text-primary-100 text-shadow"
+          "inline-block mt-4 mb-12 p-1 font-600 text-3xl md:text-5xl leading-none text-primary-100 text-shadow-md"
       },
       [_vm._v(_vm._s(_vm.messages[_vm.language].value_primary) + ".")]
     ),
     _vm._v(" "),
     _c("p", {
       staticClass:
-        "mb-12 text-lg md:text-2xl leading-normal text-primary-gray-200 text-shadow",
+        "mb-12 text-lg md:text-2xl leading-normal text-primary-gray-200 text-shadow-md",
       domProps: {
         innerHTML: _vm._s(_vm.messages[_vm.language].value_description)
       }
@@ -7429,9 +7485,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "button",
+    "div",
     {
-      staticClass: "btn",
       on: {
         click: function($event) {
           _vm.modalOpen = !_vm.modalOpen
@@ -7439,38 +7494,73 @@ var render = function() {
       }
     },
     [
-      _c(
-        "svg",
-        {
-          staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
-          attrs: {
-            xmlns: "http://www.w3.org/2000/svg",
-            viewBox: "0 0 24 24",
-            fill: "none",
-            "stroke-width": "2",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round"
-          }
-        },
-        [
-          _c("rect", {
-            attrs: {
-              x: "3",
-              y: "3",
-              width: "18",
-              height: "18",
-              rx: "2",
-              ry: "2"
-            }
-          }),
-          _vm._v(" "),
-          _c("line", { attrs: { x1: "3", y1: "9", x2: "21", y2: "9" } }),
-          _vm._v(" "),
-          _c("line", { attrs: { x1: "9", y1: "21", x2: "9", y2: "9" } })
-        ]
-      ),
+      _vm.showIconBeforeMessage
+        ? _c(
+            "svg",
+            {
+              staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                "stroke-width": "2",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }
+            },
+            [
+              _c("rect", {
+                attrs: {
+                  x: "3",
+                  y: "3",
+                  width: "18",
+                  height: "18",
+                  rx: "2",
+                  ry: "2"
+                }
+              }),
+              _vm._v(" "),
+              _c("line", { attrs: { x1: "3", y1: "9", x2: "21", y2: "9" } }),
+              _vm._v(" "),
+              _c("line", { attrs: { x1: "9", y1: "21", x2: "9", y2: "9" } })
+            ]
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c("span", [_vm._v(_vm._s(_vm.messages[_vm.language].call_to_action))]),
+      _vm._v(" "),
+      _vm.showIconAfterMessage
+        ? _c(
+            "svg",
+            {
+              staticClass: "inline-block h-4 w-4 ml-2 stroke-current",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                "stroke-width": "2",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }
+            },
+            [
+              _c("rect", {
+                attrs: {
+                  x: "3",
+                  y: "3",
+                  width: "18",
+                  height: "18",
+                  rx: "2",
+                  ry: "2"
+                }
+              }),
+              _vm._v(" "),
+              _c("line", { attrs: { x1: "3", y1: "9", x2: "21", y2: "9" } }),
+              _vm._v(" "),
+              _c("line", { attrs: { x1: "9", y1: "21", x2: "9", y2: "9" } })
+            ]
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "portal",
@@ -7482,10 +7572,11 @@ var render = function() {
               attrs: {
                 "z-index": "z-50",
                 open: _vm.modalOpen,
-                "content-max-width": "max-w-sm"
+                "content-max-width": "max-w-sm",
+                "close-event": "close-primary-cta"
               },
               on: {
-                close: function($event) {
+                "close-primary-cta": function($event) {
                   _vm.modalOpen = false
                 }
               }
