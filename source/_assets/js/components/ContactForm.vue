@@ -88,13 +88,14 @@
       <div class="text-sm text-gray-500">
         <p class="">
           {{ messages[language].not_sure }}
-          <a
-          class="text-primary no-underline hover:underline transition"
-          href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme"
-          target="_blank"
-          rel="noopener"
-          >
-            {{ messages[language].alternate_action }}</a>.
+          <secondary-call-to-action
+            class="text-primary no-underline hover:underline transition"
+            :language="language"
+            :first-letter-is-upper-case="false"
+            :messages-replacement="secondary_cta"
+            :show-icon-before-message="false"
+            :show-icon-after-message="false">
+          </secondary-call-to-action>
         </p>
       </div>
     </form>
@@ -103,10 +104,12 @@
 
 <script>
 import InfoTooltip from '../components/InfoTooltip.vue'
+import SecondaryCallToAction from '../components/SecondaryCallToAction.vue'
 
 export default {
   components: {
-    InfoTooltip
+    InfoTooltip,
+    SecondaryCallToAction
   },
   props: ['language', 'open'],
   data () {
@@ -125,7 +128,7 @@ export default {
           message_placeholder: 'What\'s on your mind?',
           submit_form: 'Send message',
           not_sure: 'Not sure yet? You can ',
-          alternate_action: 'learn more about this project, instead'
+          alternate_action: 'learn more about this project, instead.'
         },
         es: {
           title: 'Bien elegido!',
@@ -139,7 +142,19 @@ export default {
           message_placeholder: 'Que está pensando?',
           submit_form: 'Enviar mensaje',
           not_sure: 'Aún no tiene certeza? También se puede,',
-          alternate_action: 'aprender más sobre este proyecto'
+          alternate_action: 'aprender más sobre este proyecto.'
+        }
+      }
+    }
+  },
+  computed: {
+    secondary_cta () {
+      return {
+        en: {
+          call_to_action: this.messages.en.alternate_action 
+        },
+        es: {
+          call_to_action: this.messages.es.alternate_action 
         }
       }
     }

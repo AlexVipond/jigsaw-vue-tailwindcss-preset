@@ -1,6 +1,6 @@
 <template>
   <!-- @click="modalOpen = !modalOpen" -->
-  <div>
+  <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme" target="_blank" rel="noopener">
     <svg
       v-if="showIconBeforeMessage"
       class="inline-block h-4 w-4 mr-2 stroke-current"
@@ -32,7 +32,7 @@
         <contact-form :language="language" :open="modalOpen" @close="modalOpen = false"></contact-form>
       </modal-background>
     </portal> -->
-  </div>
+  </a>
 </template>
 
 <script>
@@ -42,7 +42,7 @@ export default {
   components: {
     // ModalBackground,
   },
-  props: ['language', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
   data () {
     return {
       messages: {
@@ -51,6 +51,39 @@ export default {
         },
         es: {
           call_to_action: 'Ver código'
+        }
+      }
+    }
+  },
+  methods: {
+    upperCaseFirstLetter (str) {
+      return str[0].toUpperCase() + str.slice(1)
+    },
+    lowerCaseFirstLetter (str) {
+      return str[0].toLowerCase() + str.slice(1)
+    },
+    replaceMessages(messagesReplacement) {
+      this.messages = messagesReplacement
+    }
+  },
+  created () {
+    // replace message
+    if(this.messagesReplacement) {
+      this.replaceMessages(this.messagesReplacement)
+    }
+
+    // uppercase message
+    var language, message
+    if(this.firstLetterIsUpperCase) {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.upperCaseFirstLetter(this.messages[language][message])
+        }
+      }
+    } else {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.lowerCaseFirstLetter(this.messages[language][message])
         }
       }
     }

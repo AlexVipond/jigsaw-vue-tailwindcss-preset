@@ -72,6 +72,8 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue__ = __webpack_require__("./source/_assets/js/components/InfoTooltip.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_SecondaryCallToAction_vue__ = __webpack_require__("./source/_assets/js/components/SecondaryCallToAction.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_SecondaryCallToAction_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_SecondaryCallToAction_vue__);
 //
 //
 //
@@ -175,12 +177,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    InfoTooltip: __WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue___default.a
+    InfoTooltip: __WEBPACK_IMPORTED_MODULE_0__components_InfoTooltip_vue___default.a,
+    SecondaryCallToAction: __WEBPACK_IMPORTED_MODULE_1__components_SecondaryCallToAction_vue___default.a
   },
   props: ['language', 'open'],
   data: function data() {
@@ -199,7 +204,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           message_placeholder: 'What\'s on your mind?',
           submit_form: 'Send message',
           not_sure: 'Not sure yet? You can ',
-          alternate_action: 'learn more about this project, instead'
+          alternate_action: 'learn more about this project, instead.'
         },
         es: {
           title: 'Bien elegido!',
@@ -213,10 +218,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           message_placeholder: 'Que está pensando?',
           submit_form: 'Enviar mensaje',
           not_sure: 'Aún no tiene certeza? También se puede,',
-          alternate_action: 'aprender más sobre este proyecto'
+          alternate_action: 'aprender más sobre este proyecto.'
         }
       }
     };
+  },
+
+  computed: {
+    secondary_cta: function secondary_cta() {
+      return {
+        en: {
+          call_to_action: this.messages.en.alternate_action
+        },
+        es: {
+          call_to_action: this.messages.es.alternate_action
+        }
+      };
+    }
   }
 });
 
@@ -584,7 +602,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     ModalBackground: __WEBPACK_IMPORTED_MODULE_0__components_ModalBackground_vue___default.a,
     ContactForm: __WEBPACK_IMPORTED_MODULE_1__components_ContactForm_vue___default.a
   },
-  props: ['language', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
   data: function data() {
     return {
       modalOpen: false,
@@ -597,6 +615,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       }
     };
+  },
+
+  methods: {
+    upperCaseFirstLetter: function upperCaseFirstLetter(str) {
+      return str[0].toUpperCase() + str.slice(1);
+    },
+    lowerCaseFirstLetter: function lowerCaseFirstLetter(str) {
+      return str[0].toLowerCase() + str.slice(1);
+    },
+    replaceMessages: function replaceMessages(messagesReplacement) {
+      this.messages = messagesReplacement;
+    }
+  },
+  created: function created() {
+    // replace message
+    if (this.messagesReplacement) {
+      this.replaceMessages(this.messagesReplacement);
+    }
+
+    // uppercase message
+    var language, message;
+    if (this.firstLetterIsUpperCase) {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.upperCaseFirstLetter(this.messages[language][message]);
+        }
+      }
+    } else {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.lowerCaseFirstLetter(this.messages[language][message]);
+        }
+      }
+    }
   }
 });
 
@@ -651,7 +703,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: {
     // ModalBackground,
   },
-  props: ['language', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
   data: function data() {
     return {
       messages: {
@@ -663,6 +715,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       }
     };
+  },
+
+  methods: {
+    upperCaseFirstLetter: function upperCaseFirstLetter(str) {
+      return str[0].toUpperCase() + str.slice(1);
+    },
+    lowerCaseFirstLetter: function lowerCaseFirstLetter(str) {
+      return str[0].toLowerCase() + str.slice(1);
+    },
+    replaceMessages: function replaceMessages(messagesReplacement) {
+      this.messages = messagesReplacement;
+    }
+  },
+  created: function created() {
+    // replace message
+    if (this.messagesReplacement) {
+      this.replaceMessages(this.messagesReplacement);
+    }
+
+    // uppercase message
+    var language, message;
+    if (this.firstLetterIsUpperCase) {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.upperCaseFirstLetter(this.messages[language][message]);
+        }
+      }
+    } else {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.lowerCaseFirstLetter(this.messages[language][message]);
+        }
+      }
+    }
   }
 });
 
@@ -6955,53 +7041,63 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.showIconBeforeMessage
-      ? _c(
-          "svg",
-          {
-            staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
-            attrs: {
-              xmlns: "http://www.w3.org/2000/svg",
-              viewBox: "0 0 24 24",
-              fill: "none",
-              "stroke-width": "2",
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round"
-            }
-          },
-          [
-            _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
-            _vm._v(" "),
-            _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
-          ]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _c("span", [_vm._v(_vm._s(_vm.messages[_vm.language].call_to_action))]),
-    _vm._v(" "),
-    _vm.showIconAfterMessage
-      ? _c(
-          "svg",
-          {
-            staticClass: "inline-block h-4 w-4 ml-2 stroke-current",
-            attrs: {
-              xmlns: "http://www.w3.org/2000/svg",
-              viewBox: "0 0 24 24",
-              fill: "none",
-              "stroke-width": "2",
-              "stroke-linecap": "round",
-              "stroke-linejoin": "round"
-            }
-          },
-          [
-            _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
-            _vm._v(" "),
-            _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
-          ]
-        )
-      : _vm._e()
-  ])
+  return _c(
+    "a",
+    {
+      attrs: {
+        href: "https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme",
+        target: "_blank",
+        rel: "noopener"
+      }
+    },
+    [
+      _vm.showIconBeforeMessage
+        ? _c(
+            "svg",
+            {
+              staticClass: "inline-block h-4 w-4 mr-2 stroke-current",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                "stroke-width": "2",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }
+            },
+            [
+              _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
+              _vm._v(" "),
+              _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("span", [_vm._v(_vm._s(_vm.messages[_vm.language].call_to_action))]),
+      _vm._v(" "),
+      _vm.showIconAfterMessage
+        ? _c(
+            "svg",
+            {
+              staticClass: "inline-block h-4 w-4 ml-2 stroke-current",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                "stroke-width": "2",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }
+            },
+            [
+              _c("polyline", { attrs: { points: "16 18 22 12 16 6" } }),
+              _vm._v(" "),
+              _c("polyline", { attrs: { points: "8 6 2 12 8 18" } })
+            ]
+          )
+        : _vm._e()
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -7249,33 +7345,29 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "text-sm text-gray-500" }, [
-            _c("p", {}, [
-              _vm._v(
-                "\n        " +
-                  _vm._s(_vm.messages[_vm.language].not_sure) +
-                  "\n        "
-              ),
-              _c(
-                "a",
-                {
+            _c(
+              "p",
+              {},
+              [
+                _vm._v(
+                  "\n        " +
+                    _vm._s(_vm.messages[_vm.language].not_sure) +
+                    "\n        "
+                ),
+                _c("secondary-call-to-action", {
                   staticClass:
                     "text-primary no-underline hover:underline transition",
                   attrs: {
-                    href:
-                      "https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme",
-                    target: "_blank",
-                    rel: "noopener"
+                    language: _vm.language,
+                    "first-letter-is-upper-case": false,
+                    "messages-replacement": _vm.secondary_cta,
+                    "show-icon-before-message": false,
+                    "show-icon-after-message": false
                   }
-                },
-                [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.messages[_vm.language].alternate_action)
-                  )
-                ]
-              ),
-              _vm._v(".\n      ")
-            ])
+                })
+              ],
+              1
+            )
           ])
         ]
       )
@@ -19053,7 +19145,15 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(PortalVue);
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: "#app",
   data: {
-    language: ''
+    language: '',
+    primary_cta: {
+      en: {
+        call_to_action: 'replacement'
+      },
+      es: {
+        call_to_action: 'reemplazo'
+      }
+    }
   },
   computed: {
     defaultLanguage: function defaultLanguage() {

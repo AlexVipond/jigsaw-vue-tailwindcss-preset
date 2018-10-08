@@ -29,19 +29,23 @@
           <primary-call-to-action
             class="btn md:btn-lg btn-grow bg-primary tracking-wide font-400 text-primary-100"
             :language="language"
+            :first-letter-is-upper-case="true"
             :show-icon-before-message="true"
             :show-icon-after-message="false">
           </primary-call-to-action>
         </button>
 
 
-        <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme" target="_blank" rel="noopener">
+        <button type="button" name="button">
           <secondary-call-to-action
             class="btn md:btn-lg btn-grow bg-white text-primary-600"
             :language="language"
+            :first-letter-is-upper-case="true"
             :show-icon-before-message="true"
             :show-icon-after-message="false">
           </secondary-call-to-action>
+        </button>
+
         </a>
       </div>
     </div>

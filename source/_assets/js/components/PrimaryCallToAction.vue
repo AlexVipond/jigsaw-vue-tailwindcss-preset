@@ -52,7 +52,7 @@ export default {
     ModalBackground,
     ContactForm,
   },
-  props: ['language', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
   data () {
     return {
       modalOpen: false,
@@ -62,6 +62,39 @@ export default {
         },
         es: {
           call_to_action: 'Solicitar sitio web'
+        }
+      }
+    }
+  },
+  methods: {
+    upperCaseFirstLetter (str) {
+      return str[0].toUpperCase() + str.slice(1)
+    },
+    lowerCaseFirstLetter (str) {
+      return str[0].toLowerCase() + str.slice(1)
+    },
+    replaceMessages(messagesReplacement) {
+      this.messages = messagesReplacement
+    }
+  },
+  created () {
+    // replace message
+    if(this.messagesReplacement) {
+      this.replaceMessages(this.messagesReplacement)
+    }
+
+    // uppercase message
+    var language, message
+    if(this.firstLetterIsUpperCase) {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.upperCaseFirstLetter(this.messages[language][message])
+        }
+      }
+    } else {
+      for (language in this.messages) {
+        for (message in this.messages[language]) {
+          this.messages[language][message] = this.lowerCaseFirstLetter(this.messages[language][message])
         }
       }
     }
