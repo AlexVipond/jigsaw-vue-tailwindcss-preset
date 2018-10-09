@@ -92,7 +92,14 @@
             class="text-primary no-underline hover:underline transition"
             :language="language"
             :first-letter-is-upper-case="false"
-            :messages-replacement="secondary_cta"
+            :messages-replacement="{
+              en: {
+                call_to_action: messages.en.alternate_action
+              },
+              es: {
+                call_to_action: messages.es.alternate_action
+              }
+            }"
             :show-icon-before-message="false"
             :show-icon-after-message="false">
           </secondary-call-to-action>
@@ -143,18 +150,6 @@ export default {
           submit_form: 'Enviar mensaje',
           not_sure: 'Aún no tiene certeza? También se puede,',
           alternate_action: 'aprender más sobre este proyecto.'
-        }
-      }
-    }
-  },
-  computed: {
-    secondary_cta () {
-      return {
-        en: {
-          call_to_action: this.messages.en.alternate_action 
-        },
-        es: {
-          call_to_action: this.messages.es.alternate_action 
         }
       }
     }

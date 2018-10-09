@@ -178,6 +178,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -222,19 +229,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       }
     };
-  },
-
-  computed: {
-    secondary_cta: function secondary_cta() {
-      return {
-        en: {
-          call_to_action: this.messages.en.alternate_action
-        },
-        es: {
-          call_to_action: this.messages.es.alternate_action
-        }
-      };
-    }
   }
 });
 
@@ -7360,7 +7354,14 @@ var render = function() {
                   attrs: {
                     language: _vm.language,
                     "first-letter-is-upper-case": false,
-                    "messages-replacement": _vm.secondary_cta,
+                    "messages-replacement": {
+                      en: {
+                        call_to_action: _vm.messages.en.alternate_action
+                      },
+                      es: {
+                        call_to_action: _vm.messages.es.alternate_action
+                      }
+                    },
                     "show-icon-before-message": false,
                     "show-icon-after-message": false
                   }
