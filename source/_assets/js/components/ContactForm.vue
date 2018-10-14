@@ -118,7 +118,7 @@ export default {
     InfoTooltip,
     SecondaryCallToAction
   },
-  props: ['language', 'open'],
+  props: ['language'],
   data () {
     return {
       infoTooltipOpen: false,

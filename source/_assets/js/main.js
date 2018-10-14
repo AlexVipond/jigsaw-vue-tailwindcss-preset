@@ -21,15 +21,7 @@ import SecondaryCallToAction from './components/SecondaryCallToAction.vue'
 let app = new Vue({
   el: "#app",
   data: {
-    language: '',
-    primary_cta: {
-      en: {
-        call_to_action: 'replacement',
-      },
-      es: {
-        call_to_action: 'reemplazo',
-      }
-    }
+    language: ''
   },
   computed: {
     defaultLanguage () {
