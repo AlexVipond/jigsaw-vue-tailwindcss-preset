@@ -88,7 +88,7 @@
       <div class="text-sm text-gray-500">
         <p class="">
           {{ messages[language].not_sure }}
-          <secondary-call-to-action
+          <call-to-action-secondary
             class="text-primary no-underline hover:underline transition"
             :language="language"
             :first-letter-is-upper-case="false"
@@ -102,7 +102,7 @@
             }"
             :show-icon-before-message="false"
             :show-icon-after-message="false">
-          </secondary-call-to-action>
+          </call-to-action-secondary>
         </p>
       </div>
     </form>
@@ -111,12 +111,12 @@
 
 <script>
 import InfoTooltip from '../components/InfoTooltip.vue'
-import SecondaryCallToAction from '../components/SecondaryCallToAction.vue'
+import CallToActionSecondary from '../components/CallToActionSecondary.vue'
 
 export default {
   components: {
     InfoTooltip,
-    SecondaryCallToAction
+    CallToActionSecondary
   },
   props: ['language'],
   data () {

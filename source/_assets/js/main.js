@@ -13,15 +13,22 @@ import languageData from './data/languageData.json'
 import LanguageChanger from './components/LanguageChanger.vue'
 
 import ValueProposition from './components/ValueProposition.vue'
-import PrimaryCallToAction from './components/PrimaryCallToAction.vue'
-import SecondaryCallToAction from './components/SecondaryCallToAction.vue'
+import CallToActionPrimary from './components/CallToActionPrimary.vue'
+import CallToActionSecondary from './components/CallToActionSecondary.vue'
 
 
 // Initialize app
 let app = new Vue({
+  components: {
+    ValueProposition,
+    CallToActionPrimary,
+    CallToActionSecondary,
+    LanguageChanger
+  },
   el: "#app",
   data: {
-    language: ''
+    language: '',
+    totalOpenModals: 0
   },
   computed: {
     defaultLanguage () {
@@ -36,13 +43,16 @@ let app = new Vue({
       this.language = language
     }
   },
-  components: {
-    ValueProposition,
-    PrimaryCallToAction,
-    SecondaryCallToAction,
-    LanguageChanger
-  },
   created () {
     this.language = computeLanguage(this.languages, this.defaultLanguage)
+  },
+  watch: {
+    totalOpenModals () {
+      if(this.totalOpenModals > 0) {
+        document.body.classList.add('overflow-hidden')
+      } else {
+        document.body.classList.remove('overflow-hidden')
+      }
+    }
   }
 });

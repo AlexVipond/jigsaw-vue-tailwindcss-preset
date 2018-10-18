@@ -1,4 +1,4 @@
-<footer class="p-4 bg-primary-700 flex items-center font-display font-light text-gray">
+<footer class="p-4 bg-primary-700 flex items-center text-primary-gray">
   <!-- <p class="mr-auto">&copy; {{ $page->copyright_year }} {{ $page->full_name }}</p> -->
   <p class="mr-auto">&copy; {{ $page->copyright_year }} Alex Vipond</p>
 

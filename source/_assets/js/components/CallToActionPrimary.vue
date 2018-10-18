@@ -32,11 +32,11 @@
 
     <portal to="modals">
       <modal-background
-      z-index="z-50"
-      :open="modalOpen"
-      content-max-width="max-w-sm"
-      close-event="close-primary-cta"
-      @close-primary-cta="modalOpen = false">
+        z-index="z-50"
+        :open="modalOpen"
+        content-max-width="max-w-sm"
+        close-event="close-primary-cta"
+        @close-primary-cta="modalOpen = false">
         <contact-form :language="language" :open="modalOpen" @close="modalOpen = false"></contact-form>
       </modal-background>
     </portal>

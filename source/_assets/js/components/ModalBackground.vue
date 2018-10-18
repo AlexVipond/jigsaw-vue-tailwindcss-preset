@@ -1,11 +1,5 @@
 <template>
-  <transition
-  name="fade-in"
-  :css="false"
-  @before-enter="beforeEnter"
-  @enter="enter"
-  @leave="leave"
-  >
+  <fade-in-out>
     <div class="fixed pin p-6 bg-true-black-50 flex justify-center items-center"
     :class="zIndex"
     v-if="open"
@@ -15,58 +9,62 @@
         <slot></slot>
       </div>
     </div>
-  </transition>
+  </fade-in-out>
 </template>
 
 <script>
-  import Velocity from 'velocity-animate'
-  import { mixin as clickaway } from 'vue-clickaway'
+import FadeInOut from '../components/transitions/FadeInOut.vue'
+import { mixin as clickaway } from 'vue-clickaway'
 
-  export default {
-    mixins: [ clickaway ],
-    props: ['open', 'zIndex', 'contentMaxWidth', 'closeEvent'],
-    data () {
-      return {}
+export default {
+  components: {
+    FadeInOut
+  },
+  props: {
+    open: {
+      type: Boolean,
+      required: true
     },
-    methods: {
-      beforeEnter (el) {
-        el.style.opacity = 0
-      },
-      enter (el, done) {
-        Velocity(
-          el,
-          { opacity: 1 },
-          { duration: 200, complete: done }
-        )
-      },
-      leave (el, done) {
-        Velocity(
-          el,
-          { opacity: 0 },
-          { duration: 200, complete: done }
-        )
-      },
-      clickaway () {
+    zIndex: {
+      type: String
+    },
+    contentMaxWidth: {
+      type: String
+    },
+    closeEvent: {
+      type: String
+    },
+  },
+  data () {
+    return {}
+  },
+  methods: {
+    clickaway () {
+      this.$emit(this.closeEvent)
+    }
+  },
+  created () {
+    const escapeListener = (evt) => {
+      if(evt.key === 'Escape') {
         this.$emit(this.closeEvent)
       }
-    },
-    created () {
-      const escapeListener = (evt) => {
-        if(evt.key === 'Escape') {
-          this.$emit(this.closeEvent)
-        }
-      }
+    }
 
-      document.addEventListener('keydown', escapeListener)
+    document.addEventListener('keydown', escapeListener)
 
-      this.$on('hook:beforeDestroy', () => {
-        document.removeEventListener('keydown', escapeListener)
-      })
-    },
-    watch: {
-      open: function() {
-        document.body.classList.toggle('overflow-hidden')
+    this.$on('hook:beforeDestroy', () => {
+      document.removeEventListener('keydown', escapeListener)
+    })
+  },
+  watch: {
+    open () {
+      if(this.open) {
+        this.$root.$data.totalOpenModals++
+      } else {
+        this.$root.$data.totalOpenModals--
       }
     }
-  }
+  },
+  mixins: [ clickaway ],
+}
 </script>

@@ -2,14 +2,18 @@
 
 @section('body')
 
-<div id="app">
+<div
+  id="app"
+  @modal-opened="console.log('here')"
+  @modal-closed="totalOpenModals--">
+
   <portal-target name="modals"></portal-target>
 
-  <nav class="absolute z-30 pin-t pin-l pin-r container mx-auto flex items-center py-4 px-8">
+  <nav class="absolute z-30 pin-t pin-l pin-r container mx-auto flex items-center py-4 px-8 text-primary-gray-100">
     <language-changer
       :language="language"
       :languages="languages"
-      class="rounded-sm p-1 ml-auto h-8 text-gray-200"
+      class="rounded-sm p-1 ml-auto h-8 opacity-70 hover:opacity-100 transition"
       options-bg-color="bg-white"
       options-text-color="text-primary-600"
       options-z-index="z-30"
@@ -26,24 +30,24 @@
 
       <div class="inline-flex flex-col sm:flex-row">
         <button class="mb-6 sm:mb-0 sm:mr-6" type="button" name="button">
-          <primary-call-to-action
+          <call-to-action-primary
             class="btn md:btn-lg w-full hover:btn-grow bg-primary tracking-wide font-400 text-primary-100"
             :language="language"
             :first-letter-is-upper-case="true"
             :show-icon-before-message="true"
             :show-icon-after-message="false">
-          </primary-call-to-action>
+          </call-to-action-primary>
         </button>
 
 
         <button type="button" name="button">
-          <secondary-call-to-action
+          <call-to-action-secondary
             class="btn md:btn-lg w-full hover:btn-grow bg-white text-primary-600"
             :language="language"
             :first-letter-is-upper-case="true"
             :show-icon-before-message="true"
             :show-icon-after-message="false">
-          </secondary-call-to-action>
+          </call-to-action-secondary>
         </button>
       </div>
     </div>

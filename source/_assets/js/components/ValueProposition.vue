@@ -5,10 +5,12 @@
       <h3 class="block font-500">{{ messages[language].value_tertiary }}.</h3>
     </div>
 
-    <h2 class="inline-block mt-4 mb-12 p-1 font-600 text-3xl md:text-5xl leading-none text-primary-100 text-shadow-md">{{ messages[language].value_primary }}.</h2>
+    <h2 class="inline-block mt-4 mb-12 p-1 font-600 text-3xl md:text-5xl leading-none text-primary-100 text-shadow-md">
+      {{ messages[language].value_primary }}.
+    </h2>
 
     <p
-      class="mb-12 text-lg md:text-2xl leading-normal text-primary-gray-200 text-shadow-md"
+      class="mb-12 md:text-xl leading-normal text-primary-gray-200 text-shadow-md"
       v-html="messages[language].value_description">
     </p>
   </div>

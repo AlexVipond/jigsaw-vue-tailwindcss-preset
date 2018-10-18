@@ -1,11 +1,23 @@
 @tailwind preflight;
 
+html {
+  font-size: 17px;
+}
+
 a {
   @apply no-underline;
 }
 
 button:focus {
   @apply outline-none;
+}
+
+::-moz-selection { /* Code for Firefox */
+  @apply bg-primary-300 text-white
+}
+
+::selection {
+  @apply bg-primary-300 text-white
 }
 
 @tailwind components;
