@@ -65,6 +65,6 @@ export default {
       }
     }
   },
-  mixins: [ clickaway ],
+  mixins: [ clickaway ]
 }
 </script>

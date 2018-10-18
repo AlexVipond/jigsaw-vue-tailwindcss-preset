@@ -1,6 +1,10 @@
 <template>
   <!-- @click="modalOpen = !modalOpen" -->
-  <a href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme" target="_blank" rel="noopener">
+  <a
+    class="inline-flex"
+    href="https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme"
+    target="_blank"
+    rel="noopener">
     <svg
       v-if="showIconBeforeMessage"
       class="inline-block h-4 w-4 mr-2 stroke-current"
@@ -42,7 +46,26 @@ export default {
   components: {
     // ModalBackground,
   },
-  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: {
+    language: {
+      type: String,
+      required: true
+    },
+    messagesReplacement: {
+      type: Object,
+    },
+    firstLetterIsUpperCase: {
+      type: Boolean,
+    },
+    showIconBeforeMessage: {
+      type: Boolean,
+      default: false
+    },
+    showIconAfterMessage: {
+      type: Boolean,
+      default: false
+    },
+  },
   data () {
     return {
       messages: {

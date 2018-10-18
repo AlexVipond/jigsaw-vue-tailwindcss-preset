@@ -723,6 +723,13 @@ button:focus {
           transform: scale(1.1);
 }
 
+.active\:btn-pressed:active {
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+}
+
 @media screen and (min-width: 768px) {
   .btn {
     border-radius: .25rem;

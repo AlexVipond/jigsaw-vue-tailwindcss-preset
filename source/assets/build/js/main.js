@@ -128,7 +128,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     ModalBackground: __WEBPACK_IMPORTED_MODULE_0__components_ModalBackground_vue___default.a,
     ContactForm: __WEBPACK_IMPORTED_MODULE_1__components_ContactForm_vue___default.a
   },
-  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: {
+    language: {
+      type: String,
+      required: true
+    },
+    messagesReplacement: {
+      type: Object
+    },
+    firstLetterIsUpperCase: {
+      type: Boolean
+    },
+    showIconBeforeMessage: {
+      type: Boolean,
+      default: false
+    },
+    showIconAfterMessage: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: function data() {
     return {
       modalOpen: false,
@@ -222,6 +241,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 // import ModalBackground from '../components/ModalBackground.vue'
 
@@ -229,7 +252,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: {
     // ModalBackground,
   },
-  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: {
+    language: {
+      type: String,
+      required: true
+    },
+    messagesReplacement: {
+      type: Object
+    },
+    firstLetterIsUpperCase: {
+      type: Boolean
+    },
+    showIconBeforeMessage: {
+      type: Boolean,
+      default: false
+    },
+    showIconAfterMessage: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: function data() {
     return {
       messages: {
@@ -7128,6 +7170,7 @@ var render = function() {
   return _c(
     "div",
     {
+      staticClass: "inline-flex",
       on: {
         click: function($event) {
           _vm.modalOpen = !_vm.modalOpen
@@ -7214,10 +7257,10 @@ var render = function() {
                 "z-index": "z-50",
                 open: _vm.modalOpen,
                 "content-max-width": "max-w-sm",
-                "close-event": "close-primary-cta"
+                "close-event": "close-cta-primary"
               },
               on: {
-                "close-primary-cta": function($event) {
+                "close-cta-primary": function($event) {
                   _vm.modalOpen = false
                 }
               }
@@ -7645,6 +7688,7 @@ var render = function() {
   return _c(
     "a",
     {
+      staticClass: "inline-flex",
       attrs: {
         href: "https://github.com/AlexVipond/jigsaw-vue-tailwind-preset#readme",
         target: "_blank",

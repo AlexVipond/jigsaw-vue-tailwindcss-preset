@@ -1,5 +1,5 @@
 <template>
-  <div @click="modalOpen = !modalOpen">
+  <div class="inline-flex" @click="modalOpen = !modalOpen">
     <svg
       v-if="showIconBeforeMessage"
       class="inline-block h-4 w-4 mr-2 stroke-current"
@@ -35,8 +35,8 @@
         z-index="z-50"
         :open="modalOpen"
         content-max-width="max-w-sm"
-        close-event="close-primary-cta"
-        @close-primary-cta="modalOpen = false">
+        close-event="close-cta-primary"
+        @close-cta-primary="modalOpen = false">
         <contact-form :language="language" :open="modalOpen" @close="modalOpen = false"></contact-form>
       </modal-background>
     </portal>
@@ -52,7 +52,26 @@ export default {
     ModalBackground,
     ContactForm,
   },
-  props: ['language', 'messagesReplacement', 'firstLetterIsUpperCase', 'showIconBeforeMessage', 'showIconAfterMessage'],
+  props: {
+    language: {
+      type: String,
+      required: true
+    },
+    messagesReplacement: {
+      type: Object,
+    },
+    firstLetterIsUpperCase: {
+      type: Boolean,
+    },
+    showIconBeforeMessage: {
+      type: Boolean,
+      default: false
+    },
+    showIconAfterMessage: {
+      type: Boolean,
+      default: false
+    },
+  },
   data () {
     return {
       modalOpen: false,
